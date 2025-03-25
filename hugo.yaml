@@ -22,7 +22,7 @@ params:
   latestContentSize: 5
   logo:
     logoText: Maximilien Petit
-    logoHomeLink: /
+    logoHomeLink: https://maximilienpetitbidouilles.github.io/MP/
   social:
     twitter: 
   tools:
