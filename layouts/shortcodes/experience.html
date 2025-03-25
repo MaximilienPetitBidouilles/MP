@@ -1,0 +1,22 @@
+{{ $data := .Site.Data.experience }}
+
+{{ with .Get "destination" }}
+{{ if eq . "cv" }}
+{{ $data = where $data "inclureDansCV" true }}
+{{ end }}
+{{ end }}
+
+<div class="timeline experience">
+  {{ range $data }}
+  <div class="timeline-container">
+    <span class="timeline-date">{{ .dateDébut }} - {{ .dateFin }}</span>
+    <div class="timeline-content">
+      <div class="title">{{ .poste }}</div>
+      <div class="subtitle">
+        <span>{{ .entreprise }}</span> <span class="dot-prefix">{{ .localisation }}</span>
+      </div>
+      <div class="content">{{ .responsabilités | markdownify }}</div>
+    </div>
+  </div>
+  {{ end }}
+</div>

@@ -1,0 +1,34 @@
+cv:
+  name: "Maximilien Petit"
+  email: "maximilien.petit@gmail.com"
+  phone: "06 51 74 95 69"
+  address: "Montigny-le-Bretonneux"
+  corpsitrf: "Ingénieur d'études titulaire"
+  bapitrf: "BAP F"
+  metieritrf: "Chargé des ressources documentaires"
+  
+
+social:
+  - label: "Email"
+    url: "mailto:maximilien.petit@gmail.com"
+    includeInAbout: true
+    includeInCV: true
+  - label: "HAL"
+    url: "https://cv.hal.science/maximilien-petit"
+    includeInAbout: true
+    includeInCV: true
+  - label: "Podcast C'est pas donné"
+    url: "https://open.spotify.com/show/6yn79j9WeTIXQSc0Mg1BHC"
+    includeInAbout: true
+    includeInCV: true
+  
+
+skills:
+  - name: Go
+    includeInCV: false
+  - name: Gin
+    includeInCV: false
+  
+
+awards:
+  - "PHP Innovation Award - August 2020 Winner"

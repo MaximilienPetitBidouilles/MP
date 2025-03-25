@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ if .Content }}
+<div class="index-content framed">
+    {{ .Content }}
+</div>
+{{ end }}
+
+<div class="index-section latest-content">
+    <div class="framed">
+        <h2>Les dernières bidouilles</h2>
+
+        <ul>
+            {{ range (where .Site.RegularPages "Type" "blog" | first .Site.Params.LatestContentSize) }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{end}}
+        </ul>
+    </div>
+</div>
+{{ end }}

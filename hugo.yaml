@@ -2,3 +2,55 @@ baseURL: https://example.org/
 languageCode: en-us
 title: My New Hugo Site
 theme: terminal
+
+
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+params:
+  centerTheme: true
+  readMore: En savoir plus
+  newerPosts: Articles plus récents
+  olderPosts: Articles plus anciens
+  readOtherPosts: Voir également
+  images:
+    - /og-image.png
+  autoCover: true
+  latestContentSize: 5
+  logo:
+    logoText: Maximilien Petit
+    logoHomeLink: /
+  social:
+    twitter: 
+  tools:
+    facebook_pixel_id: 
+    google_tag_manager_id: 
+pagination:
+  pagerSize: 10
+menu:
+  main:
+    - identifier: home
+      name: Accueil
+      url: /
+      weight: 1
+    - identifier: blog
+      name: Bidouilles
+      url: /blog
+      weight: 3
+    - identifier: tags
+      name: Tags
+      url: /tags
+      weight: 5
+    - identifier: cv
+      name: Cv
+      url: /cv
+      weight: 6
+services:
+  googleAnalytics:
+    id:
+taxonomies:
+  tag: tags
+

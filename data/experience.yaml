@@ -1,0 +1,74 @@
+- entreprise: "UVSQ, laboratoire CHCSC"
+  dateDébut: "01/02/2017"
+  dateFin: ""
+  poste: "Chargé des ressources documentaires (8 ans et 1 mois)"
+  localisation: "Guyancourt"
+  inclureDansCV: true
+  responsabilités: |
+    - Gestion d'un fonds spécialisé en histoire culturelle
+    - Appui aux activités de recherche du laboratoire
+    - Gestion des outils de diffusion de l'information
+    - Conception et animation de formations pour différents publics (étudiants, doctorants, enseignants-chercheurs)
+    - Expertise sur les archives ouvertes, cocréation d'un FabLab sur la collecte, le stockage, le traitement, la description et la diffusion des données de la recherche
+    - Aide à la décision et appui aux projets de recherche et de valorisation concernant les PGD, la science ouverte, l'usage de bases de données, le numérique.
+
+
+- entreprise: "Médiathèque de Chatou"
+  dateDébut: "16/09/2015"
+  dateFin: "15/09/2016"
+  poste: "Assistant de conservation du patrimoine et des bibliothèques (12 mois)"
+  localisation: "Chatou"
+  inclureDansCV: true
+  responsabilités: |
+    - Mise en place et pilotage du plan de développement des collections
+    - Conception de formations en direction des publics
+    - Conception de formations en interne dans le cadre de la réorganisation de la politique d'acquisition et l'installation d'un logiciel métier
+
+- entreprise: "La Petite Bibliothèque Ronde"
+  dateDébut: "14/01/2014"
+  dateFin: "16/03/2015"
+  poste: "Responsable numérique (14 mois)"
+  localisation: "Clamart"
+  inclureDansCV: true
+  responsabilités: |
+    - Participation à la mise en place d'un catalogue d'applications mobiles
+    - Conception de formations en direction d'un public professionnel
+    - Mise en place d'animations pour un public jeunesse
+    - Interventions dans le cadre des activités périscolaires.
+
+- entreprise: "Château de Lunéville"
+  dateDébut: "01/01/2012"
+  dateFin: "30/06/2012"
+  poste: "Médiateur culturel et patrimonial (6 mois)"
+  localisation: "Lunéville"
+  inclureDansCV: true
+  responsabilités: |
+    - Animation, accompagnement des actions de communication et de mise en valeur du chantier de rénovation du château de Lunéville
+    - Préparation des expositions et visites guidées
+    - Étude sur les modalités et conditions de mise en marché d'une application mobile pour un site culturel
+
+- entreprise: "BU Lettres, Sciences humaines et sociales, Université Nancy 2"
+  dateDébut: "01/09/2011"
+  dateFin: "31/12/2011"
+  poste: "Assistant de recherche documentaire (6 mois)"
+  localisation: "Nancy"
+  inclureDansCV: true
+  responsabilités: |
+    - Participation à la mise en place d'un service d'aide à la recherche documentaire et à une enquête LibQUAL+
+    - Conception de formations à propos de la méthodologie documentaire et l'utilisation du logiciel Zotero
+
+- entreprise: "Structures documentaires de la fonction publique d'État et des collectivités territoriales"
+  poste: "Stagiaire (6 mois)"
+  localisation: "Metz, Vandœuvre-lès-Nancy, Nancy"
+  inclureDansCV: true
+  responsabilités: |
+    - Acquisition et valorisation de jeux vidéo, médiation numérique (BiblioBox), gestion de parc informatique
+    - Construction d'un entrepôt numérique et participation à la mise en place d'un wiki sémantique (Fonds Taveneaux), programme de numérisation
+  
+- entreprise: "UVSQ, composante IECI"
+  poste: "Vacataire (117h TD L3 à M2)"
+  localisation: "Guyancourt"
+  inclureDansCV: true
+  responsabilités: |
+    - Thématiques : outils et humanités numériques, veille informationnelle, CMS pour la recherche, générateurs de sites statiques
+
