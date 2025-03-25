@@ -6,8 +6,15 @@
     <description>Recent content on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Mar 2025 10:30:59 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2025 20:28:00 +0100</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/about/</link>
+      <pubDate>Tue, 25 Mar 2025 20:28:00 +0100</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/about/</guid>
+      <description>&lt;p&gt;Abouuut&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Agenda</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/agenda/</link>
