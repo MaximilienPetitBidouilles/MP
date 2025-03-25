@@ -4,7 +4,7 @@ keywords = ["Maximilien Petit"]
 
 {{% div class="welcome" %}}
 
-{{< image src="/MP/images/memoji.png" alt="Maximilien Petit" position="center" width="200px" height="200px" >}}
+{{< image src="images/memoji.png" alt="Maximilien Petit" position="center" width="200px" height="200px" >}}
 
 # Bonjour à vous !
 
