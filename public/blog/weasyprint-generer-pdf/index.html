@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.145.0">
   
-    <title>Maximilien Petit</title>
+    <title>Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint :: Maximilien Petit</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="keywords" content="Maximilien Petit" />
+<meta name="description" content="Le problème Les générateurs de sites statiques permettent de déployer rapidement des sites utiles pour les communautés universitaires. Notamment pour la gestion d&rsquo;événements scientifiques, la valorisation de projets de médiation/vulgarisation. Ils sont en cela une alternative utile à Sciencesconf ou toutes les usines à gaz sous WordPress.
+Dans le cas présent, on souhaite partir d&rsquo;un CV déployé dans un site statique sous Hugo et utilisant un layout adapté et des shortcodes.
+" />
+<meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="https://maximilienpetitbidouilles.github.io/MP/" />
+<link rel="canonical" href="https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/" />
 
 
 
@@ -75,10 +76,12 @@
 
 
 <meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Maximilien Petit">
-<meta property="og:description" content="" />
-<meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint">
+<meta property="og:description" content="Le problème Les générateurs de sites statiques permettent de déployer rapidement des sites utiles pour les communautés universitaires. Notamment pour la gestion d&rsquo;événements scientifiques, la valorisation de projets de médiation/vulgarisation. Ils sont en cela une alternative utile à Sciencesconf ou toutes les usines à gaz sous WordPress.
+Dans le cas présent, on souhaite partir d&rsquo;un CV déployé dans un site statique sous Hugo et utilisant un layout adapté et des shortcodes.
+" />
+<meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/" />
 <meta property="og:site_name" content="Maximilien Petit" />
 
   <meta property="og:image" content="https://maximilienpetitbidouilles.github.io/MP/og-image.png">
@@ -87,10 +90,10 @@
 <meta property="og:image:height" content="627">
 
 
+  <meta property="article:published_time" content="2025-03-25 22:35:15 &#43;0100 CET" />
 
 
 
-  <link href="/MP/index.xml" rel="alternate" type="application/rss+xml" title="Maximilien Petit" />
 
 
 
@@ -185,32 +188,43 @@
 
   <div class="content">
     
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/">Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-03-25</time><span class="post-author">Maximilien Petit</span></div>
 
-<div class="index-content framed">
-    <div class="welcome">
-<img src="/MP/images/memoji.png"  alt="Maximilien Petit"  class="center"   width="200px"   height="200px"  />
-<h1 id="bonjour-à-vous-">Bonjour à vous !</h1>
-<p>Je suis <strong>Maximilien Petit</strong>, personnel BIATSS de l ’université de Versailles – Saint-Quentin-en-Yvelines (UVSQ).</p>
-<p>Ce site statique regroupe mon <a href="/MP/cv" target="_blank">CV</a> et mes <a href="/MP/blog" target="_blank">bidouilles</a> : une documentation personnelle sur des projets qui relèvent de l&rsquo;informatique documentaire, l&rsquo;information scientifique et technique, la science ouverte, l&rsquo;appui à la recherche et l&rsquo;ingénierie pédagogique.</p>
-</div>
-</div>
+  
+    <span class="post-tags">
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/hugo/">Hugo</a>&nbsp;
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/python/">Python</a>&nbsp;
+      
+    </span>
+  
+  
 
 
-<div class="index-section latest-content">
-    <div class="framed">
-        <h2>Les dernières bidouilles</h2>
+  
 
-        <ul>
-            
-            <li><a href="https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/">Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint</a></li>
-            
-            <li><a href="https://maximilienpetitbidouilles.github.io/MP/blog/agenda/">Agenda</a></li>
-            
-            <li><a href="https://maximilienpetitbidouilles.github.io/MP/blog/mon-premier-article/">Mon Premier Article</a></li>
-            
-        </ul>
-    </div>
-</div>
+  <div class="post-content"><div>
+        <h2 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Les générateurs de sites statiques permettent de déployer rapidement des sites utiles pour les communautés universitaires. Notamment pour la gestion d&rsquo;événements scientifiques, la valorisation de projets de médiation/vulgarisation. Ils sont en cela une alternative utile à <a href="https://www.sciencesconf.org/" target="_blank">Sciencesconf</a> ou toutes les usines à gaz sous WordPress.</p>
+<p>Dans le cas présent, on souhaite partir d&rsquo;un CV déployé dans un site statique sous Hugo et utilisant un <em>layout</em> adapté et des <em>shortcodes</em>.</p>
+<p>On souhaite ensuite transformer ce CV HTML/CSS en un fichier PDF exploitable. C&rsquo;est-à-dire, un PDF que l&rsquo;on peut partager facilement, imprimer facilement et qui respecte les normes de mise en page.</p>
+<h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>On utilise un environnement virtuel (Jupyter Notebook, Google Colab) et Python pour installer Weasyprint. Et c&rsquo;est cette librairie, précisément, qui permet de transformer un fichier HTML en un PDF très propre. Le code à la suite, avec une simple modification, en l&rsquo;occurrence une commande pour insérer le numéro de page dans le fichier.</p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
 
   </div>
 
