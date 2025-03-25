@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My New Hugo Site</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://localhost:1313/MP/tags/</link>
     <description>Recent content in Tags on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Mar 2025 09:45:26 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/MP/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CV</title>
-      <link>http://localhost:1313/tags/cv/</link>
+      <link>http://localhost:1313/MP/tags/cv/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/tags/cv/</guid>
+      <guid>http://localhost:1313/MP/tags/cv/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/tags/hugo/</link>
+      <link>http://localhost:1313/MP/tags/hugo/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/tags/hugo/</guid>
+      <guid>http://localhost:1313/MP/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/tags/markdown/</link>
+      <link>http://localhost:1313/MP/tags/markdown/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/tags/markdown/</guid>
+      <guid>http://localhost:1313/MP/tags/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>PDF</title>
-      <link>http://localhost:1313/tags/pdf/</link>
+      <link>http://localhost:1313/MP/tags/pdf/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/tags/pdf/</guid>
+      <guid>http://localhost:1313/MP/tags/pdf/</guid>
       <description></description>
     </item>
   </channel>

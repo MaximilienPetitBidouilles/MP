@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/MP/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Mar 2025 10:30:59 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/MP/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agenda</title>
-      <link>http://localhost:1313/blog/agenda/</link>
+      <link>http://localhost:1313/MP/blog/agenda/</link>
       <pubDate>Tue, 25 Mar 2025 10:30:59 +0100</pubDate>
-      <guid>http://localhost:1313/blog/agenda/</guid>
+      <guid>http://localhost:1313/MP/blog/agenda/</guid>
       <description>&lt;p&gt;Je suis ici&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mon Premier Article</title>
-      <link>http://localhost:1313/blog/mon-premier-article/</link>
+      <link>http://localhost:1313/MP/blog/mon-premier-article/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/blog/mon-premier-article/</guid>
+      <guid>http://localhost:1313/MP/blog/mon-premier-article/</guid>
       <description>&lt;p&gt;Test&lt;/p&gt;</description>
     </item>
     <item>
       <title>cv</title>
-      <link>http://localhost:1313/cv/</link>
+      <link>http://localhost:1313/MP/cv/</link>
       <pubDate>Tue, 25 Mar 2025 08:29:27 +0100</pubDate>
-      <guid>http://localhost:1313/cv/</guid>
+      <guid>http://localhost:1313/MP/cv/</guid>
       <description>&lt;h2 id=&#34;mon-projet-de-mobilité-interne&#34;&gt;Mon projet de mobilité interne&lt;/h2&gt;&#xA;&lt;p&gt;Je suis actuellement IGE BAP F Chargé des ressources documentaires (F2A42). J&amp;rsquo;aimerais pouvoir évoluer en mobilité interne à l&amp;rsquo;UVSQ sur un poste de la BAP F ou, si possible, sur un poste BAP J. En effet, en raison de mon parcours professionnel je peux par exemple justifier de compétences sur l&amp;rsquo;ingénierie en formation ou l&amp;rsquo;appui au projet de recherche. J&amp;rsquo;ai un enfant en bas âge donc ma mobilité géographique se limite au campus Vauban d&amp;rsquo;Alembert (hors DBIST), à l&amp;rsquo;UFR Simone Veil-Santé, à la Faculté de droit et science politique, à l&amp;rsquo;UFR des sciences, à l&amp;rsquo;observatoire de Versailles Saint-Quentin-en-Yvelines, à la Maison de l&amp;rsquo;étudiant.&lt;/p&gt;</description>
     </item>
   </channel>

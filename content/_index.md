@@ -1,5 +1,5 @@
 +++
-keywords = ["Temuri Takalandze", "ABGEO", "Software Engineer", "Software Development"]
+keywords = ["Maximilien Petit"]
 +++
 
 {{% div class="welcome" %}}
