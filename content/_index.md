@@ -13,7 +13,7 @@ Je suis **Maximilien Petit**, personnel BIATSS de l ’université de Versailles
 Ce site statique regroupe mon [CV](/MP/cv) et mes [bidouilles](/MP/blog) : une documentation personnelle sur des projets qui relèvent de l'informatique documentaire, l'information scientifique et technique, la science ouverte, l'appui à la recherche et l'ingénierie pédagogique.
 
 
-
+Test
 
 {{% /div %}}
 
