@@ -138,7 +138,7 @@
             <div class="links">
                 {{ range $idx, $link := (where .Site.Data.profile.social "includeInCV" true) }}
                 <span class="{{ if not (eq $idx 0) }}dot-prefix{{ end }}">
-                    <a href="{{ $link.url }}">{{ $link.label }}</a>
+                    <a href="{{ $link.url }}" target="_blank">{{ $link.label }}</a>
                 </span>
                 {{ end }}
             </div>
