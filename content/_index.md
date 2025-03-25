@@ -10,10 +10,6 @@ keywords = ["Maximilien Petit"]
 
 Je suis **Maximilien Petit**, personnel BIATSS de l ’université de Versailles – Saint-Quentin-en-Yvelines (UVSQ).
 
-Ce site statique regroupe mon [CV](/MP/cv) et mes [bidouilles](/MP/blog) : une documentation personnelle sur des projets qui relèvent de l'informatique documentaire, l'information scientifique et technique, la science ouverte, l'appui à la recherche et l'ingénierie pédagogique.
-
-
-Test
+Ce site statique regroupe mon <a href="/MP/cv" target="_blank">CV</a> et mes <a href="/MP/blog" target="_blank">bidouilles</a> : une documentation personnelle sur des projets qui relèvent de l'informatique documentaire, l'information scientifique et technique, la science ouverte, l'appui à la recherche et l'ingénierie pédagogique.
 
 {{% /div %}}
-
