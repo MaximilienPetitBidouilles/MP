@@ -1,4 +1,4 @@
-baseURL: https://maximilienpetitbidouilles.github.io/MP/
+baseURL: "https://maximilienpetitbidouilles.github.io/MP/"
 languageCode: en-us
 title: Maximilien Petit
 theme: terminal

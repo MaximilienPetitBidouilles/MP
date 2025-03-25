@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Markdown on My New Hugo Site</title>
-    <link>http://localhost:1313/MP/tags/markdown/</link>
-    <description>Recent content in Markdown on My New Hugo Site</description>
+    <title>Markdown on Maximilien Petit</title>
+    <link>https://maximilienpetitbidouilles.github.io/MP/tags/markdown/</link>
+    <description>Recent content in Markdown on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Mar 2025 09:45:26 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/MP/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://maximilienpetitbidouilles.github.io/MP/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mon Premier Article</title>
-      <link>http://localhost:1313/MP/blog/mon-premier-article/</link>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/mon-premier-article/</link>
       <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>http://localhost:1313/MP/blog/mon-premier-article/</guid>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/mon-premier-article/</guid>
       <description>&lt;p&gt;Test&lt;/p&gt;</description>
     </item>
   </channel>
