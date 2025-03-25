@@ -215,6 +215,27 @@ Dans le cas présent, on souhaite partir d&rsquo;un CV déployé dans un site st
 <p>On souhaite ensuite transformer ce CV HTML/CSS en un fichier PDF exploitable. C&rsquo;est-à-dire, un PDF que l&rsquo;on peut partager facilement, imprimer facilement et qui respecte les normes de mise en page.</p>
 <h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>On utilise un environnement virtuel (Jupyter Notebook, Google Colab) et Python pour installer Weasyprint. Et c&rsquo;est cette librairie, précisément, qui permet de transformer un fichier HTML en un PDF très propre. Le code à la suite, avec une simple modification, en l&rsquo;occurrence une commande pour insérer le numéro de page dans le fichier.</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">!python3 -m venv venv
+!source venv/bin/activate
+!pip install weasyprint
+!weasyprint --info
+
+# Use get_ipython().system to run &#39;weasyprint --info&#39; command within the virtual environment
+get_ipython().system(&#39;source venv/bin/activate &amp;&amp; weasyprint --info&#39;) 
+# This ensures the command is run in the correct environment.
+</code></pre><pre tabindex="0"><code class="language-code" data-lang="code">%%writefile style.css
+@page {
+    @bottom-right {
+        content: counter(page); 
+    }
+}
+</code></pre><pre tabindex="0"><code class="language-code" data-lang="code">!weasyprint -s style.css https://maximilienpetitbidouilles.github.io/MP/cv/ /tmp/test.pdf
+</code></pre><h2 id="pour-aller-plus-loin">Pour aller plus loin<a href="#pour-aller-plus-loin" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://dev.to/bowmanjd/python-pdf-generation-from-html-with-weasyprint-538h " target="_blank">Python PDF Generation from HTML with WeasyPrint  </a></li>
+<li><a href="https://templated.io/blog/how-to-convert-html-to-pdf-with-python/" target="_blank">How To Convert HTML to PDF with Python (Best for 2024)  </a></li>
+<li><a href="https://doc.courtbouillon.org/weasyprint/stable/" target="_blank">La documentation de Weasyprint  </a></li>
+</ul>
 
       </div></div>
 
