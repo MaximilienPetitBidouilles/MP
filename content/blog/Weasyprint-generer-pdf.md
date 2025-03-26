@@ -14,6 +14,10 @@ Dans le cas présent, on souhaite partir d'un CV déployé dans un site statique
 
 On souhaite ensuite transformer ce CV HTML/CSS en un fichier PDF exploitable. C'est-à-dire, un PDF que l'on peut partager facilement, imprimer facilement et qui respecte les normes de mise en page.
 
+## Qui peut aider ? 
+
+Les personnels BIATSS BAP E (informatique), les personnels BIATSS de laboratoire (espèces menacées d'extinction) BAP D (SHS) ou F (documentation, édition en particulier) et les bidouilleurs et bidouilleuses aux profils hybrides que l'on retrouve dans les humanités numériques.
+
 ## La bidouille
 
 On utilise un environnement virtuel (Jupyter Notebook, Google Colab) et Python pour installer Weasyprint. Et c'est cette librairie, précisément, qui permet de transformer un fichier HTML en un PDF très propre. Le code à la suite, avec une simple modification, en l'occurrence une commande pour insérer le numéro de page dans le fichier.
