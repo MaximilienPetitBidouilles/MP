@@ -10,72 +10,47 @@ Assurer la campagne de dépôts de notices et/ou publications d'un laboratoire S
 
 La démarche résumée dans le Markmap ci-dessous : 
 
+title: markmap
+markmap:
+  colorFreezeLevel: 2
+---
 
-{{< markmap >}}
-{
-  "type": "heading",
-  "depth": 0,
-  "payload": {
-    "lines": [1, 2]
-  },
-  "content": "Moulinette des dépôts des publications CHCSC/HCERES",
-  "children": [
-    {
-      "type": "heading",
-      "depth": 1,
-      "payload": {
-        "lines": [3, 4]
-      },
-      "content": "Objectifs",
-      "children": [
-        {
-          "type": "list_item",
-          "depth": 2,
-          "payload": {
-            "lines": [5, 6]
-          },
-          "content": "100% des notices déposées sur HAL, XX% des PDF"
-        },
-        {
-          "type": "list_item",
-          "depth": 2,
-          "payload": {
-            "lines": [6, 7]
-          },
-          "content": "Bénéficier d'une base Zotero structurée des publications des EC pour automatiser certaines tâches : dépôt vers HAL, fiche des EC sur le site du labo, etc."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "depth": 1,
-      "payload": {
-        "lines": [8, 9]
-      },
-      "content": "Marche à suivre",
-      "children": [
-        {
-          "type": "list_item",
-          "depth": 2,
-          "payload": {
-            "lines": [10, 11]
-          },
-          "content": "",
-          "children": [
-            {
-              "type": "list_item",
-              "depth": 3,
-              "payload": {
-                "lines": [10, 11],
-                "index": 1
-              },
-              "content": "1. Extraction des publications de l'EC via sa fiche chercheur. Uniquement les publications depuis son intégration au CHCSC"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "colorFreezeLevel": 2
-}
-{{< /markmap >}}
+## Links
+
+- [Website](https://markmap.js.org/)
+- [GitHub](https://github.com/gera2ld/markmap)
+
+## Related Projects
+
+- [coc-markmap](https://github.com/gera2ld/coc-markmap) for Neovim
+- [markmap-vscode](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode) for VSCode
+- [eaf-markmap](https://github.com/emacs-eaf/eaf-markmap) for Emacs
+
+## Features
+
+Note that if blocks and lists appear at the same level, the lists will be ignored.
+
+### Lists
+
+- **strong** ~~del~~ *italic* ==highlight==
+- `inline code`
+- [x] checkbox
+- Katex: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$ <!-- markmap: fold -->
+  - [More Katex Examples](#?d=gist:af76a4c245b302206b16aec503dbe07b:katex.md)
+- Now we can wrap very very very very long text based on `maxWidth` option
+- Ordered list
+  1. item 1
+  2. item 2
+
+### Blocks
+
+```js
+console.log('hello, JavaScript')
+```
+
+| Products | Price |
+|-|-|
+| Apple | 4 |
+| Banana | 2 |
+
+![](https://markmap.js.org/favicon.png)
