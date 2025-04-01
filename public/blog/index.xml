@@ -6,28 +6,21 @@
     <description>Recent content in Blogs on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Mar 2025 22:35:15 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 14:45:33 +0200</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moulinette HAL pour une campagne HCERES</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/</link>
+      <pubDate>Tue, 01 Apr 2025 14:45:33 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/</guid>
+      <description>&lt;h2 id=&#34;le-problème&#34;&gt;Le problème&lt;/h2&gt;&#xA;&lt;p&gt;Assurer la campagne de dépôts de notices et/ou publications d&amp;rsquo;un laboratoire SHS. L&amp;rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&amp;rsquo;une base Zotero structurée des publications pour, à l&amp;rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.&lt;/p&gt;&#xA;&lt;p&gt;La démarche résumée dans le Markmap ci-dessous :&lt;/p&gt;&#xA;&lt;div style=&#34;width: 100%; height: 500px;&#34;&gt;&#xD;&#xA;    &lt;svg id=&#34;mindmap&#34;&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/style.css&#34;&gt;&#xD;&#xA;  &lt;script src=&#34;https://cdn.jsdelivr.net/npm/d3@6.2.0&#34;&gt;&lt;/script&gt;&#xD;&#xA;  &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-view@0.15.0-alpha.0&#34;&gt;&lt;/script&gt;&#xD;&#xA;  &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/index.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;  &lt;script&gt;&#xD;&#xA;  (() =&gt; {&#xD;&#xA;    setTimeout(() =&gt; {&#xD;&#xA;      const { markmap: mm, mm: en } = window;&#xD;&#xA;      const toolbar = new mm.Toolbar();&#xD;&#xA;      toolbar.attach(en);&#xD;&#xA;      const toolbarElement = toolbar.render();&#xD;&#xA;      toolbarElement.setAttribute(&#34;style&#34;, &#34;position:absolute;bottom:20px;right:20px&#34;);&#xD;&#xA;      document.body.append(toolbarElement);&#xD;&#xA;    });&#xD;&#xA;  })();&#xD;&#xA;  &lt;/script&gt;&#xD;&#xA;  &lt;script&gt;&#xD;&#xA;  ((d, x, b, A) =&gt; {&#xD;&#xA;    const k = d();&#xD;&#xA;    window.mm = k.Markmap.create(&#34;svg#mindmap&#34;, (x || k.deriveOptions)(A), b);&#xD;&#xA;  })(() =&gt; window.markmap, null, &#xA;{&#xA;  &#34;type&#34;: &#34;heading&#34;,&#xA;  &#34;depth&#34;: 0,&#xA;  &#34;payload&#34;: {&#xA;    &#34;lines&#34;: [1, 2]&#xA;  },&#xA;  &#34;content&#34;: &#34;Moulinette des dépôts des publications CHCSC/HCERES&#34;,&#xA;  &#34;children&#34;: [&#xA;    {&#xA;      &#34;type&#34;: &#34;heading&#34;,&#xA;      &#34;depth&#34;: 1,&#xA;      &#34;payload&#34;: {&#xA;        &#34;lines&#34;: [3, 4]&#xA;      },&#xA;      &#34;content&#34;: &#34;Objectifs&#34;,&#xA;      &#34;children&#34;: [&#xA;        {&#xA;          &#34;type&#34;: &#34;list_item&#34;,&#xA;          &#34;depth&#34;: 2,&#xA;          &#34;payload&#34;: {&#xA;            &#34;lines&#34;: [5, 6]&#xA;          },&#xA;          &#34;content&#34;: &#34;100% des notices déposées sur HAL, XX% des PDF&#34;&#xA;        },&#xA;        {&#xA;          &#34;type&#34;: &#34;list_item&#34;,&#xA;          &#34;depth&#34;: 2,&#xA;          &#34;payload&#34;: {&#xA;            &#34;lines&#34;: [6, 7]&#xA;          },&#xA;          &#34;content&#34;: &#34;Bénéficier d&#39;une base Zotero structurée des publications des EC pour automatiser certaines tâches : dépôt vers HAL, fiche des EC sur le site du labo, etc.&#34;&#xA;        }&#xA;      ]&#xA;    },&#xA;    {&#xA;      &#34;type&#34;: &#34;heading&#34;,&#xA;      &#34;depth&#34;: 1,&#xA;      &#34;payload&#34;: {&#xA;        &#34;lines&#34;: [8, 9]&#xA;      },&#xA;      &#34;content&#34;: &#34;Marche à suivre&#34;,&#xA;      &#34;children&#34;: [&#xA;        {&#xA;          &#34;type&#34;: &#34;list_item&#34;,&#xA;          &#34;depth&#34;: 2,&#xA;          &#34;payload&#34;: {&#xA;            &#34;lines&#34;: [10, 11]&#xA;          },&#xA;          &#34;content&#34;: &#34;&#34;,&#xA;          &#34;children&#34;: [&#xA;            {&#xA;              &#34;type&#34;: &#34;list_item&#34;,&#xA;              &#34;depth&#34;: 3,&#xA;              &#34;payload&#34;: {&#xA;                &#34;lines&#34;: [10, 11],&#xA;                &#34;index&#34;: 1&#xA;              },&#xA;              &#34;content&#34;: &#34;1. Extraction des publications de l&#39;EC via sa fiche chercheur. Uniquement les publications depuis son intégration au CHCSC&#34;&#xA;            }&#xA;          ]&#xA;        }&#xA;      ]&#xA;    }&#xA;  ],&#xA;  &#34;colorFreezeLevel&#34;: 2&#xA;}&#xA;);&#xD;&#xA;  &lt;/script&gt;</description>
+    </item>
     <item>
       <title>Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/</link>
       <pubDate>Tue, 25 Mar 2025 22:35:15 +0100</pubDate>
       <guid>https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/</guid>
       <description>&lt;h2 id=&#34;le-problème&#34;&gt;Le problème&lt;/h2&gt;&#xA;&lt;p&gt;Les générateurs de sites statiques permettent de déployer rapidement des sites utiles pour les communautés universitaires. Notamment pour la gestion d&amp;rsquo;événements scientifiques, la valorisation de projets de médiation/vulgarisation. Ils sont en cela une alternative utile à &lt;a href=&#34;https://www.sciencesconf.org/&#34; target=&#34;_blank&#34;&gt;Sciencesconf&lt;/a&gt; ou toutes les usines à gaz sous WordPress.&lt;/p&gt;&#xA;&lt;p&gt;Dans le cas présent, on souhaite partir d&amp;rsquo;un CV déployé dans un site statique sous Hugo et utilisant un &lt;em&gt;layout&lt;/em&gt; adapté et des &lt;em&gt;shortcodes&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Agenda</title>
-      <link>https://maximilienpetitbidouilles.github.io/MP/blog/agenda/</link>
-      <pubDate>Tue, 25 Mar 2025 10:30:59 +0100</pubDate>
-      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/agenda/</guid>
-      <description>&lt;p&gt;Je suis ici&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mon Premier Article</title>
-      <link>https://maximilienpetitbidouilles.github.io/MP/blog/mon-premier-article/</link>
-      <pubDate>Tue, 25 Mar 2025 09:45:26 +0100</pubDate>
-      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/mon-premier-article/</guid>
-      <description>&lt;p&gt;Test&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
