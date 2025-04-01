@@ -203,30 +203,30 @@
             <h2 id="le-problème">Le problème</h2>
 <p>Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.</p>
 <p>La démarche résumée dans le Markmap ci-dessous :</p>
-<div style="width: 100%; height: 500px;">
-    <svg id="mindmap"></svg>
-  </div>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/d3@6.2.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0-alpha.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/index.js"></script>
-  <script>
-  (() => {
-    setTimeout(() => {
-      const { markmap: mm, mm: en } = window;
-      const toolbar = new mm.Toolbar();
-      toolbar.attach(en);
-      const toolbarElement = toolbar.render();
-      toolbarElement.setAttribute("style", "position:absolute;bottom:20px;right:20px");
-      document.body.append(toolbarElement);
-    });
-  })();
-  </script>
-  <script>
-  ((d, x, b, A) => {
-    const k = d();
-    window.mm = k.Markmap.create("svg#mindmap", (x || k.deriveOptions)(A), b);
-  })(() => window.markmap, null, 
+<div style="width: 100%; height: 100vh; position: relative;">
+    <svg id="mindmap" style="width: 100%; height: 100%;"></svg>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/style.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0-alpha.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0-alpha.1+1308d8e/dist/index.js"></script>
+<script>
+(() => {
+  setTimeout(() => {
+    const { markmap: mm, mm: en } = window;
+    const toolbar = new mm.Toolbar();
+    toolbar.attach(en);
+    const toolbarElement = toolbar.render();
+    toolbarElement.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+    document.body.append(toolbarElement);
+  });
+})();
+</script>
+<script>
+((d, x, b, A) => {
+  const k = d();
+  window.mm = k.Markmap.create("svg#mindmap", (x || k.deriveOptions)(A), b);
+})(() => window.markmap, null, 
 {
   "type": "heading",
   "depth": 0,
@@ -294,7 +294,7 @@
   "colorFreezeLevel": 2
 }
 );
-  </script>
+</script>
           
         </div>
 
