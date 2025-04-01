@@ -2,6 +2,9 @@
 date: '2025-04-01T14:45:33+02:00'
 draft: false
 title: 'Moulinette HAL pour une campagne HCERES'
+title: markmap
+markmap:
+  colorFreezeLevel: 2
 ---
 
 ## Le problème
@@ -10,9 +13,7 @@ Assurer la campagne de dépôts de notices et/ou publications d'un laboratoire S
 
 La démarche résumée dans le Markmap ci-dessous : 
 
-title: markmap
-markmap:
-  colorFreezeLevel: 2
+
 ---
 
 ## Links
