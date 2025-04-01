@@ -13,3 +13,4 @@ Assurer la campagne de dépôts de notices et/ou publications d'un laboratoire S
 La démarche résumée dans le Markmap ci-dessous : 
 
 <img src="/images/mindmap1" alt="Diagramme de la démarche" style="width:100%; height:auto;">
+
