@@ -31,7 +31,7 @@ Laboratoire SHS, donc, nous pouvons oublier l'outil SCOPUS et toute forme de moi
 
 2 Formatage des notices en BibTeX via l'usage d'un LLM
 
-Il faut uniformiser les données bibliographiques car, en SHS, les pratiques sont très multiples, ce qui est un obstacle pour notre chantier documentaire. Il y a plus de 1000 références à importer dans HAL, donc impossible à faire seul sur une courte période. Nous utilisons un LLM, avec regret, pour effectuer une tâche de conversion vers le format BibTeX. Avant les LLM, cela pouvait se faire difficilement avec, par exemple, Reference Extractor (https://rintze.zelle.me/ref-extractor/) ou AnyStyle https://anystyle.io/). Mais dorénavant cela peut se faire avec beaucoup plus d'efficacité avec un *prompt* travaillé et un LLM. 
+Il faut uniformiser les données bibliographiques car, en SHS, les pratiques sont très multiples, ce qui est un obstacle pour notre chantier documentaire. Il y a plus de 1000 références à importer dans HAL, donc impossible à faire seul sur une courte période. Nous utilisons un LLM, avec regret, pour effectuer une tâche de conversion vers le format BibTeX. Avant les LLM, cela pouvait se faire difficilement avec, par exemple, <a href="https://rintze.zelle.me/ref-extractor/" target="_blank">Reference Extractor</a> ou <a href="https://anystyle.io/" target="_blank">AnyStyle</a>. Mais dorénavant cela peut se faire avec beaucoup plus d'efficacité avec un *prompt* travaillé et un LLM. 
 
 3 Import des notices dans un Zotero structuré et validation des métadonnées
 
@@ -39,7 +39,7 @@ Le fichier BibTeX du LLM est importé dans une bibliothèque Zotero qui permet d
 
 4 Usage de X2HAL et import par lot sur HAL
 
-On exporte avec Zotero le fichier BibTex retravaillé et on l'importe sur X2HAL. Je recommande de travailler dans Zotero avec le plugin Better BibTeX (https://retorque.re/zotero-better-bibtex/). Et ensuite, X2HAL vous permet de vérifier à nouveau les métadonnées, de gérer les affiliations, les champs obligatoires. Pour bien prendre en main l'outil, vous avez un bac à sable à disposition (https://cas-preprod.ccsd.cnrs.fr/cas/login?service=http%3A%2F%2Fqlf-x2hal.inria.fr%2F). Quelques limites : parfois des problèmes techniques pour les imports (vérifiez bien vos métadonnées et caractères spéciaux), et ne tentez pas de dépasser 50 notices en une seule action.
+On exporte avec Zotero le fichier BibTex retravaillé et on l'importe sur X2HAL. Je recommande de travailler dans Zotero avec <a href="https://retorque.re/zotero-better-bibtex/" target="_blank">le plugin Better BibTeX</a>. Et ensuite, X2HAL vous permet de vérifier à nouveau les métadonnées, de gérer les affiliations, les champs obligatoires. Pour bien prendre en main l'outil, vous avez un <a href="https://cas-preprod.ccsd.cnrs.fr/cas/login?service=http%3A%2F%2Fqlf-x2hal.inria.fr%2F" target="_blank">bac à sable à disposition</a>. Quelques limites : parfois des problèmes techniques pour les imports (vérifiez bien vos métadonnées et caractères spéciaux), et ne tentez pas de dépasser 50 notices en une seule action.
 
 5 Prise de contact avec l'EC
 
