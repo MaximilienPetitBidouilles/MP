@@ -8,9 +8,7 @@ readingTime: true
 toc: true
 TocTitle: "Table des matières"
 ---
-<div class="custom-toc">
-  {{ .Page.TableOfContents }}
-</div>
+{{< toc >}}
 
 <div style="background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
   {{< details summary="Pour information" >}}
