@@ -18,6 +18,8 @@ params:
   newerPosts: Articles plus récents
   olderPosts: Articles plus anciens
   readOtherPosts: Voir également
+  words: mots
+  minuteReadingTime: minutes de lecture
   images:
     - /og-image.png
   autoCover: true
