@@ -6,6 +6,7 @@ author: Maximilien Petit
 tags: ["HAL","LLM"]
 readingTime: true
 toc: true
+TocTitle: "Table des matières"
 ---
 
 {{< details summary="Pour information" >}}
