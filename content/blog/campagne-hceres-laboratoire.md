@@ -12,7 +12,7 @@ TocTitle: "Table des matières"
   {{ .TableOfContents }}
 </div>
 
-<div style="background-color: #e7f3fe; border: 1px solid #b3d4fc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+<div style="background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
   {{< details summary="Pour information" >}}
   Cette bidouille est une synthèse d'une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d'expérience de la campagne HCERES et avait pour but d'expliquer comment l'on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
   {{< /details >}}
