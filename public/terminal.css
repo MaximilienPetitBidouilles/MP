@@ -3,3 +3,29 @@
   --foreground: #45372b;
   --accent: #d22000;
 }
+
+.custom-toc {
+  background-color: var(--background); /* Utilise la couleur de fond définie dans :root */
+  border: 1px solid var(--accent); /* Utilise la couleur d'accent définie dans :root */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.custom-toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.custom-toc ul li {
+  margin: 5px 0;
+}
+
+.custom-toc a {
+  text-decoration: none;
+  color: var(--accent); /* Utilise la couleur d'accent définie dans :root */
+}
+
+.custom-toc a:hover {
+  text-decoration: underline;
+}
