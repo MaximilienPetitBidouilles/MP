@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille 1 Extraction des publications de l&rsquo;EC 2 Formatage des notices en BibTeX via l&rsquo;usage d&rsquo;un LLM 3 Import des notices dans un Zotero structuré et validation des métadonnées 4 Usage de X2HAL et import par lot sur HAL 5 Prise de contact avec l&rsquo;EC 6 Import des données dans le tableau de bord Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
+<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille 1 Extraction des publications de l&rsquo;EC 2 Formatage des notices en BibTeX via l&rsquo;usage d&rsquo;un LLM 3 Import des notices dans un Zotero structuré et validation des métadonnées 4 Usage de X2HAL et import par lot sur HAL 5 Prise de contact avec l&rsquo;EC 6 Import des données dans le tableau de bord Remarques générales Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
 " />
 <meta name="keywords" content="" />
 
@@ -77,7 +77,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Moulinette HAL pour une campagne HCERES">
-<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille 1 Extraction des publications de l&rsquo;EC 2 Formatage des notices en BibTeX via l&rsquo;usage d&rsquo;un LLM 3 Import des notices dans un Zotero structuré et validation des métadonnées 4 Usage de X2HAL et import par lot sur HAL 5 Prise de contact avec l&rsquo;EC 6 Import des données dans le tableau de bord Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
+<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille 1 Extraction des publications de l&rsquo;EC 2 Formatage des notices en BibTeX via l&rsquo;usage d&rsquo;un LLM 3 Import des notices dans un Zotero structuré et validation des métadonnées 4 Usage de X2HAL et import par lot sur HAL 5 Prise de contact avec l&rsquo;EC 6 Import des données dans le tableau de bord Remarques générales Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
 " />
 <meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/" />
 <meta property="og:site_name" content="Maximilien Petit" />
@@ -190,7 +190,7 @@
   <h1 class="post-title">
     <a href="https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/">Moulinette HAL pour une campagne HCERES</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-01</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">6 minutes de lecture (1234 mots)</span></div>
+  <div class="post-meta"><time class="post-date">2025-04-01</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">8 minutes de lecture (1667 mots)</span></div>
 
   
     <span class="post-tags">
@@ -225,6 +225,7 @@
             <li><a href="#6-import-des-données-dans-le-tableau-de-bord">6 Import des données dans le tableau de bord</a></li>
           </ul>
         </li>
+        <li><a href="#remarques-générales">Remarques générales</a></li>
       </ul>
     </li>
   </ul>
@@ -261,6 +262,14 @@
 <p>Cette prise de contact est également un moyen intéressant pour faire comprendre à l&rsquo;EC qu&rsquo;il y a derrière cela beaucoup de travail, des interlocuteurs (ne pas oublier d&rsquo;associer les personnels de la filière bibliothèque). Cette prise de contact est également essentielle car, comme déjà évoqué plus haut, les fiches sont rarement à jour, donc il nous manque des références/publications. C&rsquo;est donc suite à cette prise de contact que l&rsquo;EC peut en profiter pour mettre à jour ce qui le concerne. C&rsquo;est aussi par cette prise de contact que des questions seront remontées par l&rsquo;EC. Des questions que nous connaissons bien car elles concernent les &ldquo;verrous&rdquo; habituels au dépôt sur HAL : est-ce que j&rsquo;ai le droit de déposer ? est-ce que je peux ajouter un embargo ? est-ce que je suis obligé de déposer ? etc.</p>
 <h3 id="6-import-des-données-dans-le-tableau-de-bord">6 Import des données dans le tableau de bord<a href="#6-import-des-données-dans-le-tableau-de-bord" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Je ne m&rsquo;étends pas sur le sujet car le tableau de bord sera l&rsquo;objet d&rsquo;une autre bidouille. Mais, pour résumer, c&rsquo;est une étape &ldquo;bonus&rdquo; supplémentaire, pas obligatoire, mais utile car elle permet de prendre connaissance de l&rsquo;évolution du chantier documentaire et elle permet de faire remonter des données pertinentes. Ce tableau de bord codé basiquement (HTML, CSS, JavaScript) puise dans la bibliothèque Zotero au coeur de la moulinette.</p>
+<h2 id="remarques-générales">Remarques générales<a href="#remarques-générales" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>L&rsquo;usage des LLM est de plus en plus performant sur les conversions de formats. C&rsquo;est donc une tâche qui sera très certainement entièrement automatisée rapidement. Il est nécessaire de s&rsquo;intéresser aux LLM <em>open-source</em> et à leurs usages en local (hors ligne) tant que certaines questions qui relèvent de l&rsquo;éthique, de la souveraineté des données et de l&rsquo;empreinte écologique des outils se posent.  Toutefois, pour le moment, il est nécessaire de compléter l&rsquo;usage des LLM par une correction &ldquo;humaine&rdquo; des métadonnées car les erreurs sont non négligeables.</li>
+<li>Le <em>prompt</em> est à travailler pour limiter les &ldquo;hallucinations&rdquo; des LLM et pour bien prendre en compte les particularités des notices sur Zotero, X2HAL et HAL, mais également le formatage des caractères spéciaux et la capitalisation des titres des références. Les notices complexes sont à surveiller, en SHS il s&rsquo;agira le plus souvent des actes de colloques et des communications dans des congrès.</li>
+<li>X2HAL pourrait disparaître. Et si cela arrive : il n&rsquo;y aura plus un seul outil viable pour le dépôt par lot de notices sur HAL. Donc utilisez X2HAL, remerciez son développeur ( Kumar Guha - <a href="mailto:Archive-ouverte@inria.fr">Archive-ouverte@inria.fr</a>) et prévenez sa tutelle qu&rsquo;il ne faut jamais, jamais (jamais) mettre hors ligne cet outil. Ou recrutez deux fois plus de bibliothécaires et documentalistes ! L&rsquo;outil n&rsquo;est pas parfait, il manque des gabarits, il y a des limites sur les imports et la reconnaissance des doublons et il faut sortir de l&rsquo;outil pour exporter efficacement le résultat, mais il existe, et il fait gagner énormément de temps à toute une communauté. C&rsquo;est précieux.</li>
+<li>Les moulinettes, les bidouilles et les moissonnages à la va-vite en période de campagne HCERES ne font pas progresser la science ouverte, à mon sens. Cette campagne incite fortement à un usage quantitatif (déposer le plus de notices bibliographiques) et non qualitatif (quid du texte intégral des notices ?). Le chantier est surdimensionné, les moyens humains et techniques sont faméliques.<a href="https://monevaluation.hceres.fr/hal" target="_blank">L&rsquo;outil d&rsquo;export des productions scientifiques du HCERES</a>
+était une aide, mais aussi, d&rsquo;une certaine manière, un carcan. Et il s&rsquo;agira un jour de trancher véritablement une question pourtant centrale : déposer les notices sur HAL, finalement, c&rsquo;est le travail de qui ? Sur ce chantier documentaire, j&rsquo;ai déposé avec ma collègue 1130 notices. Sur la même période, les EC du laboratoire n&rsquo;ont eu le temps d&rsquo;en déposer que 133. Comment font les laboratoires sans personnels ou avec un service commun de documentation ne pouvant pas appuyer ? Comment feront les unités de recherche SHS lorsqu&rsquo;il s&rsquo;agira de déposer à la fois les notices, les publications mais aussi les jeux de données ?</li>
+</ul>
 
       </div></div>
 
