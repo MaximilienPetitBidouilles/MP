@@ -4,6 +4,7 @@ draft: false
 title: 'Moulinette HAL pour une campagne HCERES'
 author: Maximilien Petit
 tags: ["HAL","LLM"]
+readingTime: true
 ---
 
 {{< details summary="Pour information" >}}

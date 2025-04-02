@@ -4,7 +4,9 @@ title: Maximilien Petit
 theme: terminal
 
 
-
+readingTime: true
+Toc: true
+TocTitle: "Table des matières"
 
 markup:
   goldmark:
