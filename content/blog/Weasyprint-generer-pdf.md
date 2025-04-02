@@ -4,9 +4,11 @@ author: Maximilien Petit
 draft: false
 title: "Générer un PDF exploitable depuis un CV HTML/CSS avec Weasyprint"
 tags: ["Hugo","Python"]
+readingTime: true
 ---
+{{< toc >}}
 
-## Le problème
+# Le problème
 
 Les générateurs de sites statiques permettent de déployer rapidement des sites utiles pour les communautés universitaires. Notamment pour la gestion d'événements scientifiques, la valorisation de projets de médiation/vulgarisation. Ils sont en cela une alternative utile à <a href="https://www.sciencesconf.org/" target="_blank">Sciencesconf</a> ou toutes les usines à gaz sous WordPress.
 
