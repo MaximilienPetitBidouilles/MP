@@ -3,7 +3,7 @@ date: '2025-04-01T14:45:33+02:00'
 draft: false
 title: 'Moulinette HAL pour une campagne HCERES'
 author: Maximilien Petit
-tags: ["HAL","LLM"]
+tags: ["HAL","LLM","HCERES"]
 readingTime: true
 toc: false
 ---
