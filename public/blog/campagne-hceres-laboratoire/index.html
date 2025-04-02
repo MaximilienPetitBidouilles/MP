@@ -6,8 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
-Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
+<meta name="description" content=" {{ .TableOfContents }} Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
 " />
 <meta name="keywords" content="" />
 
@@ -78,8 +77,7 @@ Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsq
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Moulinette HAL pour une campagne HCERES">
-<meta property="og:description" content=" Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
-Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
+<meta property="og:description" content=" {{ .TableOfContents }} Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
 " />
 <meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/" />
 <meta property="og:site_name" content="Maximilien Petit" />
@@ -192,7 +190,7 @@ Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsq
   <h1 class="post-title">
     <a href="https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/">Moulinette HAL pour une campagne HCERES</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-01</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">6 minutes de lecture (1170 mots)</span></div>
+  <div class="post-meta"><time class="post-date">2025-04-01</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">6 minutes de lecture (1173 mots)</span></div>
 
   
     <span class="post-tags">
@@ -222,12 +220,17 @@ Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsq
   
 
   <div class="post-content"><div>
-        
+        <div style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+  {{ .TableOfContents }}
+</div>
+<div style="background-color: #e7f3fe; border: 1px solid #b3d4fc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+  
 <details>
   <summary>Pour information</summary>
   <p>Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.</p>
 </details>
 
+</div>
 <hr>
 <h2 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.</p>
