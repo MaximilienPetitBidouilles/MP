@@ -9,7 +9,7 @@ toc: true
 TocTitle: "Table des matières"
 ---
 <div class="custom-toc">
-  {{ .TableOfContents }}
+  {{ .Page.TableOfContents }}
 </div>
 
 <div style="background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
