@@ -13,6 +13,8 @@ TocTitle: "Table des matières"
 Cette bidouille est une synthèse d'une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d'expérience de la campagne HCERES et avait pour but d'expliquer comment l'on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
 {{< /details >}}
 
+***
+
 ## Le problème
 
 Assurer la campagne de dépôts de notices et/ou publications d'un laboratoire SHS. L'objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d'une base Zotero structurée des publications pour, à l'avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
