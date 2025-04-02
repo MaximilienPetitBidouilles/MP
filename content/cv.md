@@ -6,7 +6,7 @@ draft: false
 title: 'cv'
 ---
 
-{{< qr text="https://gohugo.io" />}}
+{{< qr text="https://maximilienpetitbidouilles.github.io/MP/" />}}
 
 ## Mon projet de mobilité interne
 

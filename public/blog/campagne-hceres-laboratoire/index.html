@@ -6,8 +6,8 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
-Les obstacles sont légion : les fiches CV des EC ne sont pas uniformisées (en termes de format, de norme bibliographique), pas actualisées, le fonctionnement des LLM pour la conversion est encore balbutiante (au moment du chantier), la moulinette fait gagner du temps mais n&rsquo;élimine pas le temps de correction des métadonnées, le dépôt par lot sur HAL repose sur un outil de l&rsquo;INRIA (X2HAL) précieux mais pas nécessairement à jour et qui pourrait disparaître subitement, les tâchées liées à la campagne HCERES sont chronophages et personne n&rsquo;a la possibilité d&rsquo;y consacrer 100% en termes de temps de travail.
+<meta name="description" content=" Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
+Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
 " />
 <meta name="keywords" content="" />
 
@@ -78,8 +78,8 @@ Les obstacles sont légion : les fiches CV des EC ne sont pas uniformisées (en 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Moulinette HAL pour une campagne HCERES">
-<meta property="og:description" content="Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
-Les obstacles sont légion : les fiches CV des EC ne sont pas uniformisées (en termes de format, de norme bibliographique), pas actualisées, le fonctionnement des LLM pour la conversion est encore balbutiante (au moment du chantier), la moulinette fait gagner du temps mais n&rsquo;élimine pas le temps de correction des métadonnées, le dépôt par lot sur HAL repose sur un outil de l&rsquo;INRIA (X2HAL) précieux mais pas nécessairement à jour et qui pourrait disparaître subitement, les tâchées liées à la campagne HCERES sont chronophages et personne n&rsquo;a la possibilité d&rsquo;y consacrer 100% en termes de temps de travail.
+<meta property="og:description" content=" Pour information Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.
+Le problème Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.
 " />
 <meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/" />
 <meta property="og:site_name" content="Maximilien Petit" />
@@ -209,7 +209,13 @@ Les obstacles sont légion : les fiches CV des EC ne sont pas uniformisées (en 
   
 
   <div class="post-content"><div>
-        <h2 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+        
+<details>
+  <summary>Pour information</summary>
+  <p>Cette bidouille est une synthèse d&rsquo;une communication réalisée le jeudi 13 juin 2024 avec Henri Bretel (chargé de bibliométrie, Université Paris-Saclay) lors de la septième édition des journées CasuHAL. Cette communication était un retour d&rsquo;expérience de la campagne HCERES et avait pour but d&rsquo;expliquer comment l&rsquo;on pouvait utiliser un LLM dans une chaîne de travail pour importer en lot plus de 1000 notices sur HAL.</p>
+</details>
+
+<h2 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Assurer la campagne de dépôts de notices et/ou publications d&rsquo;un laboratoire SHS. L&rsquo;objectif étant de déposer 100% des notices des enseignants-chercheurs et de disposer d&rsquo;une base Zotero structurée des publications pour, à l&rsquo;avenir, automatiser certaines tâches : dépôt des notices sur HAL, mise à jour des fiches CV des EC sur le site du laboratoire.</p>
 <p><strong>Les obstacles sont légion</strong> : les fiches CV des EC ne sont pas uniformisées (en termes de format, de norme bibliographique), pas actualisées, le fonctionnement des <em>LLM</em> pour la conversion est encore balbutiante (au moment du chantier), la moulinette fait gagner du temps mais n&rsquo;élimine pas le temps de correction des métadonnées, le dépôt par lot sur HAL repose sur un outil de l&rsquo;INRIA (X2HAL) précieux mais pas nécessairement à jour et qui pourrait disparaître subitement, les tâchées liées à la campagne HCERES sont chronophages et personne n&rsquo;a la possibilité d&rsquo;y consacrer 100% en termes de temps de travail.</p>
 <p>Et quand bien même la moulinette serait <em>parfaite</em>, elle est, sur le papier, un aveu d&rsquo;échec : le principe de HAL étant le dépôt des publications par les chercheurs (et non par les bibliothécaires, les documentalistes, les moulinettes), utiliser un telle chaîne de travail ne peut que se faire en soupirant et en étant insatisfait professionnellement. Mais il y a le principe de réalité : il faut déposer le dossier, et nous n&rsquo;avons jamais le temps.</p>
@@ -231,13 +237,6 @@ Les obstacles sont légion : les fiches CV des EC ne sont pas uniformisées (en 
 <p>Cette prise de contact est également un moyen intéressant pour faire comprendre à l&rsquo;EC qu&rsquo;il y a derrière cela beaucoup de travail, des interlocuteurs (ne pas oublier d&rsquo;associer les personnels de la filière bibliothèque). Cette prise de contact est également essentielle car, comme déjà évoqué plus haut, les fiches sont rarement à jour, donc il nous manque des références/publications. C&rsquo;est donc suite à cette prise de contact que l&rsquo;EC peut en profiter pour mettre à jour ce qui le concerne. C&rsquo;est aussi par cette prise de contact que des questions seront remontées par l&rsquo;EC. Des questions que nous connaissons bien car elles concernent les &ldquo;verrous&rdquo; habituels au dépôt sur HAL : est-ce que j&rsquo;ai le droit de déposer ? est-ce que je peux ajouter un embargo ? est-ce que je suis obligé de déposer ? etc.</p>
 <p><strong>6 Import des données dans le tableau de bord</strong></p>
 <p>Je ne m&rsquo;étends pas sur le sujet car le tableau de bord sera l&rsquo;objet d&rsquo;une autre bidouille. Mais, pour résumer, c&rsquo;est une étape &ldquo;bonus&rdquo; supplémentaire, pas obligatoire, mais utile car elle permet de prendre connaissance de l&rsquo;évolution du chantier documentaire et elle permet de faire remonter des données pertinentes. Ce tableau de bord codé basiquement (HTML, CSS, JavaScript) puise dans la bibliothèque Zotero au coeur de la moulinette.</p>
-
-<details>
-  <summary>See the details</summary>
-  <p>This is a <strong>bold</strong> word.</p>
-</details>
-
-<img src="/MP/qr_924bf7d80a564b23.png" width="132" height="132">
 
       </div></div>
 
