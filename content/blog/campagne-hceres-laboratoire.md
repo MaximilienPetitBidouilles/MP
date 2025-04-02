@@ -5,7 +5,7 @@ title: 'Moulinette HAL pour une campagne HCERES'
 author: Maximilien Petit
 tags: ["HAL","LLM"]
 readingTime: true
-toc: false
+toc: true
 TocTitle: "Table des matières"
 ---
 <div style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
