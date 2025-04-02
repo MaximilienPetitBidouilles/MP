@@ -12,6 +12,22 @@
   margin-bottom: 20px;
 }
 
+.custom-toc details {
+  margin-bottom: 10px;
+}
+
+.custom-toc summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--accent); /* Utilise la couleur d'accent définie dans :root */
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.custom-toc summary:hover {
+  text-decoration: underline;
+}
+
 .custom-toc ul {
   list-style-type: none;
   padding-left: 0;
