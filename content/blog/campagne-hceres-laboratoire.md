@@ -51,24 +51,8 @@ Cette prise de contact est également un moyen intéressant pour faire comprendr
 
 Je ne m'étends pas sur le sujet car le tableau de bord sera l'objet d'une autre bidouille. Mais, pour résumer, c'est une étape "bonus" supplémentaire, pas obligatoire, mais utile car elle permet de prendre connaissance de l'évolution du chantier documentaire et elle permet de faire remonter des données pertinentes. Ce tableau de bord codé basiquement (HTML, CSS, JavaScript) puise dans la bibliothèque Zotero au coeur de la moulinette.
 
-{{< code language="css" title="Really cool snippet" open="true" >}}
-pre {
-  background: #1a1a1d;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  overflow: auto;
+{{< details summary="See the details" >}}
+This is a **bold** word.
+{{< /details >}}
 
-  @media (--phone) {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  code {
-    background: none !important;
-    color: #ccc;
-    padding: 0;
-    font-size: inherit;
-  }
-}
-{{< /code >}}
+{{< qr text="https://gohugo.io" />}}
