@@ -5,7 +5,7 @@ theme: terminal
 
 
 readingTime: true
-Toc: true
+Toc: false
 TocTitle: "Table des matières"
 
 markup:
