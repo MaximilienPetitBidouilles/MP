@@ -190,7 +190,7 @@
   <h1 class="post-title">
     <a href="https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/">Transcrire des entretiens avec Whisper</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">4 minutes de lecture (822 mots)</span></div>
+  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">4 minutes de lecture (814 mots)</span></div>
 
   
     <span class="post-tags">
@@ -198,8 +198,6 @@
       #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/llm/">LLM</a>&nbsp;
       
       #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/whisper/">Whisper</a>&nbsp;
-      
-      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/hceres/">HCERES</a>&nbsp;
       
     </span>
   
@@ -230,7 +228,7 @@
 <p>En priorité, <strong>les personnels de la BAP D</strong> et notamment celles et ceux qui ont une expertise en &ldquo;Production, traitement et analyse des données&rdquo;. Ne pas hésiter, donc, à travailler avec les collègues dans <strong>les laboratoires de sociologie</strong> par exemple.</p>
 <h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><strong>Elle fonctionne avec Python 3.9.9, Pytorch 2.4.0 (stable, Windows, Pip, Python, CUDA 11.8), Chocolatey 2.3.0, ffmpeg 7.0.1, Whisper v20231117. La transcription est réalisée avec un ordinateur portable équipé d&rsquo;une carte graphique Geforce RTX 4090.</strong></p>
-<p><strong>On télécharge et on installe Python</strong> sur sa machine. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.</p>
+<p><strong>On télécharge et on installe<a href="https://www.python.org/downloads/" target="_blank">Python</a>sur sa machine</strong>. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.</p>
 <ul>
 <li>Avant l&rsquo;installation, bien cocher la case « add python to path » ;</li>
 <li>Après l&rsquo;installation, on vérifie : on ouvre l&rsquo;invite de commande (cmd dans la barre de recherche de votre machine) puis on tape</li>
@@ -239,12 +237,12 @@
 </code></pre><ul>
 <li>En cas de bon fonctionnement, l&rsquo;invite de commande vous indique la version de Python installée.</li>
 </ul>
-<p><strong>On télécharge et on installe en local PyTorch</strong> sur sa machine.</p>
+<p><strong>On télécharge et on installe en local<a href="https://pytorch.org/get-started/locally/" target="_blank">PyTorch</a>sur sa machine.</strong></p>
 <ul>
 <li>Pour cette bidouille, voici ce que l&rsquo;on sélectionne pour PyTorch 2.4.0 : stable, Windows, Pip, Python, CUDA 11.8. Si vous n&rsquo;avez pas une carte graphique puissante sur votre machine, ne sélectionnez pas CUDA mais CPU. Après sélection des choix, on copie la commande (« run this command ») ;</li>
 <li>On colle la commande dans l&rsquo;invite de commande de sa machine lancée en mode administrateur (clic droit sur cmd puis « Exécuter en tant qu&rsquo;administrateur »).</li>
 </ul>
-<p><strong>On télécharge et on installe en local Chocolatey</strong> sur sa machine.</p>
+<p><strong>On télécharge et on installe en local<a href="https://chocolatey.org/install" target="_blank">Chocolatey</a>sur sa machine.</strong></p>
 <ul>
 <li>On sélectionne « individual » pour le mode d&rsquo;installation ;</li>
 <li>On copie la commande (« Now run the following command ») ;</li>
@@ -258,7 +256,7 @@
 </code></pre><ul>
 <li>On vous demandera une fois « oui ou non » pour l&rsquo;exécution du script, tapez « y » pour oui.</li>
 </ul>
-<p><strong>On télécharge et on installe Whisper</strong> sur sa machine.</p>
+<p><strong>On télécharge et on installe<a href="https://github.com/openai/whisper" target="_blank">Whisper</a>sur sa machine.</strong></p>
 <ul>
 <li>On ouvre l&rsquo;invite de commande en administrateur puis :</li>
 </ul>

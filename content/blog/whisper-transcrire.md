@@ -3,7 +3,7 @@ date: '2025-04-03T20:25:29+02:00'
 draft: truefalse
 title: 'Transcrire des entretiens avec Whisper'
 author: Maximilien Petit
-tags: ["LLM","Whisper","HCERES"]
+tags: ["LLM","Whisper"]
 readingTime: true
 ---
 {{< toc >}}
@@ -20,7 +20,7 @@ En priorité, **les personnels de la BAP D** et notamment celles et ceux qui ont
 
 **Elle fonctionne avec Python 3.9.9, Pytorch 2.4.0 (stable, Windows, Pip, Python, CUDA 11.8), Chocolatey 2.3.0, ffmpeg 7.0.1, Whisper v20231117. La transcription est réalisée avec un ordinateur portable équipé d'une carte graphique Geforce RTX 4090.**
 
-**On télécharge et on installe Python** sur sa machine. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.
+**On télécharge et on installe<a href="https://www.python.org/downloads/" target="_blank">Python</a>sur sa machine**. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.
 
 - Avant l'installation, bien cocher la case « add python to path » ;
 - Après l'installation, on vérifie : on ouvre l'invite de commande (cmd dans la barre de recherche de votre machine) puis on tape 
@@ -30,12 +30,12 @@ python -V
 ```
 - En cas de bon fonctionnement, l'invite de commande vous indique la version de Python installée.
 
-**On télécharge et on installe en local PyTorch** sur sa machine.
+**On télécharge et on installe en local<a href="https://pytorch.org/get-started/locally/" target="_blank">PyTorch</a>sur sa machine.**
 
 - Pour cette bidouille, voici ce que l'on sélectionne pour PyTorch 2.4.0 : stable, Windows, Pip, Python, CUDA 11.8. Si vous n'avez pas une carte graphique puissante sur votre machine, ne sélectionnez pas CUDA mais CPU. Après sélection des choix, on copie la commande (« run this command ») ;
 - On colle la commande dans l'invite de commande de sa machine lancée en mode administrateur (clic droit sur cmd puis « Exécuter en tant qu'administrateur »).
 
-**On télécharge et on installe en local Chocolatey** sur sa machine.
+**On télécharge et on installe en local<a href="https://chocolatey.org/install" target="_blank">Chocolatey</a>sur sa machine.**
 
 - On sélectionne « individual » pour le mode d'installation ;
 - On copie la commande (« Now run the following command ») ;
@@ -50,7 +50,7 @@ choco install ffmpeg
 
 - On vous demandera une fois « oui ou non » pour l'exécution du script, tapez « y » pour oui.
 
-**On télécharge et on installe Whisper** sur sa machine.
+**On télécharge et on installe<a href="https://github.com/openai/whisper" target="_blank">Whisper</a>sur sa machine.**
 
 - On ouvre l'invite de commande en administrateur puis : 
 ```code
