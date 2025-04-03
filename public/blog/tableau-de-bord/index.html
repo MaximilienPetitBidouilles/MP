@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   
-    <title>Tableau De Bord :: Maximilien Petit</title>
+    <title>API Zotero et tableau de bord :: Maximilien Petit</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Visionneuse HTML Vous pouvez consulter le tableau de bord interactif ci-dessous :
-s
+<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille Le problème On souhaite utiliser un tableau de bord pour suivre l&rsquo;évolution d&rsquo;un chantier documentaire, en l&rsquo;occurrence le dépôt des notices HAL d&rsquo;un laboratoire SHS pour la dernière campagne HCERES. Ce chantier repose, entre autres, sur l&rsquo;utilisation d&rsquo;une bibliothèque Zotero pour la validation des métadonnées des notices qui sont importées ensuite sur HAL par le biais de X2HAL.
 " />
 <meta name="keywords" content="" />
 
@@ -77,9 +76,8 @@ s
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Tableau De Bord">
-<meta property="og:description" content="Visionneuse HTML Vous pouvez consulter le tableau de bord interactif ci-dessous :
-s
+<meta property="og:title" content="API Zotero et tableau de bord">
+<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille Le problème On souhaite utiliser un tableau de bord pour suivre l&rsquo;évolution d&rsquo;un chantier documentaire, en l&rsquo;occurrence le dépôt des notices HAL d&rsquo;un laboratoire SHS pour la dernière campagne HCERES. Ce chantier repose, entre autres, sur l&rsquo;utilisation d&rsquo;une bibliothèque Zotero pour la validation des métadonnées des notices qui sont importées ensuite sur HAL par le biais de X2HAL.
 " />
 <meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/" />
 <meta property="og:site_name" content="Maximilien Petit" />
@@ -190,10 +188,20 @@ s
     
 <article class="post">
   <h1 class="post-title">
-    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/">Tableau De Bord</a>
+    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/">API Zotero et tableau de bord</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-03</time></div>
+  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">2 minutes de lecture (397 mots)</span></div>
 
+  
+    <span class="post-tags">
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/hal/">HAL</a>&nbsp;
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/zotero/">Zotero</a>&nbsp;
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/hceres/">HCERES</a>&nbsp;
+      
+    </span>
   
   
 
@@ -201,12 +209,36 @@ s
   
 
   <div class="post-content"><div>
-        <h2 id="visionneuse-html">Visionneuse HTML<a href="#visionneuse-html" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+        <div class="custom-toc">
+    <details open>
+      <summary style="cursor: pointer; font-weight: bold; margin-bottom: 10px;">Table des matières</summary>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#le-problème">Le problème</a>
+      <ul>
+        <li><a href="#qui-peut-aider-">Qui peut aider ?</a></li>
+        <li><a href="#la-bidouille">La bidouille</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+  </div>
+<h1 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>On souhaite utiliser <strong>un tableau de bord pour suivre l&rsquo;évolution d&rsquo;un chantier documentaire</strong>, en l&rsquo;occurrence le dépôt des notices HAL d&rsquo;un laboratoire SHS pour la dernière campagne HCERES. Ce chantier repose, entre autres, sur l&rsquo;utilisation d&rsquo;une bibliothèque Zotero pour la validation des métadonnées des notices qui sont importées ensuite sur HAL par le biais de X2HAL.</p>
+<p>Ce tableau de bord doit se coder rapidement et se mettre à jour en fonction des données qui sont contenues dans la bibliothèque Zotero.</p>
+<p>Ce tableau de bord doit pouvoir utiliser sommairement <strong>la visualisation de données</strong> : un nuage de mots-clés (qui puise dans les titres des publications), un graphique des publications par type.</p>
+<h2 id="qui-peut-aider-">Qui peut aider ?<a href="#qui-peut-aider-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>C&rsquo;est un travail qui relève de l&rsquo;informatique, donc, les personnels ITRF de la BAP E. Et celles et ceux qui bidouillent dans les laboratoires (BAP D, BAP F). Il y a toujours également un ou deux bidouilleurs chevronnés dans les bibliothèques. On peut penser également aux réseaux des MSH qui, de plus en plus, bénéficient d&rsquo;une ou deux personnes en appui aux structures pour les &ldquo;humanités numériques&rdquo;.</p>
+<h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><strong>On fait le choix de tout coder dans un seul fichier (HTML, CSS, JavaScript)</strong> car l&rsquo;usage sera avant tout personnel et situationnel (la campagne HCERES). Pour le graphique et le nuage de mots-clés, c&rsquo;est <strong>la bibliothèque Highcharts</strong> qui est utilisée, avec Highcharts Word Cloud et Highcharts Boost Module. Tout repose également sur le paramétrage de l&rsquo;API Zotero.</p>
+<p>Le code partagé ici est largement améliorable (à votre bon coeur !) mais, en l&rsquo;état, il fonctionne et pourrait être utile pour les laboratoires. <strong>Le code est un peu &ldquo;lourd&rdquo;</strong> (des duplications), la pagination dans les tableaux n&rsquo;est pas satisfaisante. Le nuage de mots-clés et le graphique, de fait, alourdissent le fichier.</p>
+<p>Ci-dessous, le code + le résultat dans une visionneuse HTML. Cliquez sur un auteur et patientez un peu pour l&rsquo;affichage des données. Le nuage de mots-clés et le graphique son utilisés pour &ldquo;Toutes les publications&rdquo;.</p>
+<p>L&rsquo;idée étant d&rsquo;avoir, pour chaque chercheur, son nom + prénom, sa date d&rsquo;arrivée dans l&rsquo;unité, des identifiants utiles (scopus, scanR, idRef) et la liste de ses publications. C&rsquo;est-à-dire, les publications qui sont dans la bibliothèque Zotero au coeur du chantier, et donc, qui sont déposées sur HAL.</p>
 <p>Vous pouvez consulter le tableau de bord interactif ci-dessous :</p>
 <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
   <iframe src="/MP/html/10_code_fonctionnel_tableau_de_bord_37.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
-<p>s</p>
 
       </div></div>
 
