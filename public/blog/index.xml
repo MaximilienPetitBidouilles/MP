@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Apr 2025 14:45:33 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 03 Apr 2025 13:29:30 +0200</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tableau De Bord</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/</link>
+      <pubDate>Thu, 03 Apr 2025 13:29:30 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html&gt;&#xA;&lt;head&gt;&#xA;&lt;title&gt;&lt;/title&gt;&#xA;&lt;style type=&#34;text/css&#34;&gt;&#xA;  body {&#xA;    font-family: Arial, sans-serif;&#xA;    margin: 0;&#xA;    padding: 0;&#xA;  }&#xA;&lt;p&gt;h2 {&#xA;margin-top: 20px;&#xA;text-align: center;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;ul {&#xA;list-style-type: none;&#xA;padding: 0;&#xA;margin: 20px 0;&#xA;text-align: center;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;ul li {&#xA;display: inline-block;&#xA;margin: 0 10px;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;table {&#xA;width: 100%;&#xA;border-collapse: collapse;&#xA;margin-top: 20px;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;th, td {&#xA;padding: 10px;&#xA;text-align: left;&#xA;border-bottom: 1px solid #ddd;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;th {&#xA;background-color: #f2f2f2;&#xA;font-weight: bold;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;a {&#xA;color: #007bff;&#xA;text-decoration: none;&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;a:hover {&#xA;text-decoration: underline;&#xA;}&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Moulinette HAL pour une campagne HCERES</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/campagne-hceres-laboratoire/</link>
