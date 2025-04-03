@@ -9,7 +9,7 @@ title: 'Tableau De Bord'
 Vous pouvez consulter le tableau de bord interactif ci-dessous :
 
 <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
-  <iframe src="/html/10_code_fonctionnel_tableau_de_bord_37.html" width="100%" height="600" style="border: none;"></iframe>
+  <iframe src="/MP/html/10_code_fonctionnel_tableau_de_bord_37.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 
 s
