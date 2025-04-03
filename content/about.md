@@ -1,7 +1,7 @@
 ---
 date: '2025-03-25T20:28:00+01:00'
 draft: false
-title: 'About'
+title: 'À propos'
 ---
 Je tiens à souligner que mes propos sur ce site n'engagent que moi et non mon institution (université, composante, laboratoire).
 
