@@ -8,6 +8,12 @@ readingTime: true
 ---
 {{< toc >}}
 
+<div style="background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+  {{< details summary="Pour information" >}}
+  Cette bidouille n'est pas obsolète mais, de fait, on peut aujourd'hui être plus rapide et plus efficace concernant l'usage de Whisper. Son aspect *open source* permet à beaucoup de développeurs indépendants (ou non) de travailler avec et de le modifier. Il y a des modèles "turbo" qui permettent un usage intéressant y compris avec des machines qui ne disposent pas de grosses cartes graphiques. Aujourd'hui, personnellement, je travaille toujours avec Whisper mais par le biais de l'application <a href="https://github.com/kaixxx/noScribe" target="_blank">noScribe</a> en particulier car cela permet de détecter les locuteurs et de travailler plus aisément l'horodatage.
+  {{< /details >}}
+</div>
+
 # Le problème
 
 On souhaite **transcrire rapidement et facilement des entretiens**. L'utilisation des *LLM* est envisagée car les résultats sont impressionnants depuis plusieurs mois. Il faut toutefois toujours corriger à la main et ne pas oublier que les outils ont leurs propres biais. Pour ce qui est des problématiques RGPD, la transcription ne doit pas se faire avec un outil en ligne. Il faut donc installer en local un *LLM*, le paramétrer et le faire tourner hors ligne sur une machine relativement puissante.
@@ -20,7 +26,7 @@ En priorité, **les personnels de la BAP D** et notamment celles et ceux qui ont
 
 **Elle fonctionne avec Python 3.9.9, Pytorch 2.4.0 (stable, Windows, Pip, Python, CUDA 11.8), Chocolatey 2.3.0, ffmpeg 7.0.1, Whisper v20231117. La transcription est réalisée avec un ordinateur portable équipé d'une carte graphique Geforce RTX 4090.**
 
-**On télécharge et on installe<a href="https://www.python.org/downloads/" target="_blank">Python</a>sur sa machine**. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.
+**On télécharge et on installe <a href="https://www.python.org/downloads/" target="_blank">Python</a> sur sa machine**. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.
 
 - Avant l'installation, bien cocher la case « add python to path » ;
 - Après l'installation, on vérifie : on ouvre l'invite de commande (cmd dans la barre de recherche de votre machine) puis on tape 
