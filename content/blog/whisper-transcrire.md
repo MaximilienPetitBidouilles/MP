@@ -30,12 +30,12 @@ python -V
 ```
 - En cas de bon fonctionnement, l'invite de commande vous indique la version de Python installée.
 
-**On télécharge et on installe en local<a href="https://pytorch.org/get-started/locally/" target="_blank">PyTorch</a>sur sa machine.**
+**On télécharge et on installe en local <a href="https://pytorch.org/get-started/locally/" target="_blank">PyTorch</a> sur sa machine.**
 
 - Pour cette bidouille, voici ce que l'on sélectionne pour PyTorch 2.4.0 : stable, Windows, Pip, Python, CUDA 11.8. Si vous n'avez pas une carte graphique puissante sur votre machine, ne sélectionnez pas CUDA mais CPU. Après sélection des choix, on copie la commande (« run this command ») ;
 - On colle la commande dans l'invite de commande de sa machine lancée en mode administrateur (clic droit sur cmd puis « Exécuter en tant qu'administrateur »).
 
-**On télécharge et on installe en local<a href="https://chocolatey.org/install" target="_blank">Chocolatey</a>sur sa machine.**
+**On télécharge et on installe en local <a href="https://chocolatey.org/install" target="_blank">Chocolatey</a> sur sa machine.**
 
 - On sélectionne « individual » pour le mode d'installation ;
 - On copie la commande (« Now run the following command ») ;
@@ -50,7 +50,7 @@ choco install ffmpeg
 
 - On vous demandera une fois « oui ou non » pour l'exécution du script, tapez « y » pour oui.
 
-**On télécharge et on installe<a href="https://github.com/openai/whisper" target="_blank">Whisper</a>sur sa machine.**
+**On télécharge et on installe <a href="https://github.com/openai/whisper" target="_blank">Whisper</a> sur sa machine.**
 
 - On ouvre l'invite de commande en administrateur puis : 
 ```code
