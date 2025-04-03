@@ -38,7 +38,7 @@ Vous pouvez consulter le tableau de bord interactif ci-dessous :
 
 Et le code à la suite : 
 
-{{< code language="html" title="Code tableau de bord" open="true" >}}
+{{< code language="html" title="Code tableau de bord" open="false" >}}
 <!DOCTYPE html>
 <html>
 <head>
@@ -810,3 +810,10 @@ publications.forEach(function(publication, index) {
 </html>
 
 {{< /code >}}
+
+## Pour aller plus loin
+
+* <a href="https://www.highcharts.com/integrations/javascript/?gad_source=1&gclid=CjwKCAjw47i_BhBTEiwAaJfPpgZI3HXrWjQkeu36H-l7Fo3ABLB2kIeGBqPNmh7SiTi0kUpCvbF0LBoCOEIQAvD_BwE" target="_blank">Bibliothèque Highcharts</a>
+* <a href="https://www.highcharts.com/demo/highcharts/wordcloud?_gl=1*sst7yi*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw47i_BhBTEiwAaJfPpgZI3HXrWjQkeu36H-l7Fo3ABLB2kIeGBqPNmh7SiTi0kUpCvbF0LBoCOEIQAvD_BwE" target="_blank">Highcharts Word cloud</a>
+* <a href="https://www.highcharts.com/docs/advanced-chart-features/boost-module?_gl=1*1ijtyjn*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw47i_BhBTEiwAaJfPpgZI3HXrWjQkeu36H-l7Fo3ABLB2kIeGBqPNmh7SiTi0kUpCvbF0LBoCOEIQAvD_BwE" target="_blank">Highcharts Boost module</a>
+* <a href="https://www.zotero.org/support/dev/web_api/v3/start" target="_blank">API Zotero</a>
