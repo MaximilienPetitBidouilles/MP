@@ -38,7 +38,7 @@ Vous pouvez consulter le tableau de bord interactif ci-dessous :
 
 Et le code à la suite : 
 
-```html
+{{< code language="html" title="Code tableau de bord" open="true" >}}
 <!DOCTYPE html>
 <html>
 <head>
@@ -809,4 +809,4 @@ publications.forEach(function(publication, index) {
 </body>
 </html>
 
-```
+{{< /code >}}
