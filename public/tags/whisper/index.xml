@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whisper on Maximilien Petit</title>
+    <link>https://maximilienpetitbidouilles.github.io/MP/tags/whisper/</link>
+    <description>Recent content in Whisper on Maximilien Petit</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Apr 2025 20:25:29 +0200</lastBuildDate>
+    <atom:link href="https://maximilienpetitbidouilles.github.io/MP/tags/whisper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transcrire des entretiens avec Whisper</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/</link>
+      <pubDate>Thu, 03 Apr 2025 20:25:29 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/</guid>
+      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;On souhaite &lt;strong&gt;transcrire rapidement et facilement des entretiens&lt;/strong&gt;. L&amp;rsquo;utilisation des &lt;em&gt;LLM&lt;/em&gt; est envisagée car les résultats sont impressionnants depuis plusieurs mois. Il faut toutefois toujours corriger à la main et ne pas oublier que les outils ont leurs propres biais. Pour ce qui est des problématiques RGPD, la transcription ne doit pas se faire avec un outil en ligne. Il faut donc installer en local un &lt;em&gt;LLM&lt;/em&gt;, le paramétrer et le faire tourner hors ligne sur une machine relativement puissante.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

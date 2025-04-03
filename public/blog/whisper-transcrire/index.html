@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Transcrire des entretiens avec Whisper :: Maximilien Petit</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille Le problème On souhaite transcrire rapidement et facilement des entretiens. L&rsquo;utilisation des LLM est envisagée car les résultats sont impressionnants depuis plusieurs mois. Il faut toutefois toujours corriger à la main et ne pas oublier que les outils ont leurs propres biais. Pour ce qui est des problématiques RGPD, la transcription ne doit pas se faire avec un outil en ligne. Il faut donc installer en local un LLM, le paramétrer et le faire tourner hors ligne sur une machine relativement puissante.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/home.min.6f0be37eff14a939121fb1847bffc9d825bc44200ed6ff6ce9d378eff96c203e.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://maximilienpetitbidouilles.github.io/MP/favicon.png">
+<link rel="apple-touch-icon" href="https://maximilienpetitbidouilles.github.io/MP/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Transcrire des entretiens avec Whisper">
+<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille Le problème On souhaite transcrire rapidement et facilement des entretiens. L&rsquo;utilisation des LLM est envisagée car les résultats sont impressionnants depuis plusieurs mois. Il faut toutefois toujours corriger à la main et ne pas oublier que les outils ont leurs propres biais. Pour ce qui est des problématiques RGPD, la transcription ne doit pas se faire avec un outil en ligne. Il faut donc installer en local un LLM, le paramétrer et le faire tourner hors ligne sur une machine relativement puissante.
+" />
+<meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/" />
+<meta property="og:site_name" content="Maximilien Petit" />
+
+  <meta property="og:image" content="https://maximilienpetitbidouilles.github.io/MP/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-04-03 20:25:29 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://maximilienpetitbidouilles.github.io/MP/">
+  <div class="logo">
+    Maximilien Petit
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/MP/">Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog">Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv">Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about">À propos</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/MP/" >Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog" >Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags" >Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv" >Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about" >À propos</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/">Transcrire des entretiens avec Whisper</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">4 minutes de lecture (825 mots)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/llm/">LLM</a>&nbsp;
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/whisper/">Whisper</a>&nbsp;
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/hceres/">HCERES</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <div class="custom-toc">
+    <details open>
+      <summary style="cursor: pointer; font-weight: bold; margin-bottom: 10px;">Table des matières</summary>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#le-problème">Le problème</a>
+      <ul>
+        <li><a href="#qui-peut-aider-">Qui peut aider ?</a></li>
+        <li><a href="#la-bidouille">La bidouille</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+  </div>
+<h1 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>On souhaite <strong>transcrire rapidement et facilement des entretiens</strong>. L&rsquo;utilisation des <em>LLM</em> est envisagée car les résultats sont impressionnants depuis plusieurs mois. Il faut toutefois toujours corriger à la main et ne pas oublier que les outils ont leurs propres biais. Pour ce qui est des problématiques RGPD, la transcription ne doit pas se faire avec un outil en ligne. Il faut donc installer en local un <em>LLM</em>, le paramétrer et le faire tourner hors ligne sur une machine relativement puissante.</p>
+<h2 id="qui-peut-aider-">Qui peut aider ?<a href="#qui-peut-aider-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>En priorité, <strong>les personnels de la BAP D</strong> et notamment celles et ceux qui ont une expertise en &ldquo;Production, traitement et analyse des données&rdquo;. Ne pas hésiter, donc, à travailler avec les collègues dans <strong>les laboratoires de sociologie</strong> par exemple.</p>
+<h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><strong>Elle fonctionne avec Python 3.9.9, Pytorch 2.4.0 (stable, Windows, Pip, Python, CUDA 11.8), Chocolatey 2.3.0, ffmpeg 7.0.1, Whisper v20231117. La transcription est réalisée avec un ordinateur portable équipé d&rsquo;une carte graphique Geforce RTX 4090.</strong></p>
+<p><strong>On télécharge et on installe Python</strong> sur sa machine. Whisper peut fonctionner avec les versions 3.8 à 3.11. Pour cette bidouille, nous installons la version 3.9.9.</p>
+<ul>
+<li>Avant l&rsquo;installation, bien cocher la case « add python to path » ;</li>
+<li>Après l&rsquo;installation, on vérifie : on ouvre l&rsquo;invite de commande (cmd dans la barre de recherche de votre machine) puis on tape
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div></li>
+<li>En cas de bon fonctionnement, l&rsquo;invite de commande vous indique la version de Python installée.</li>
+</ul>
+<p>On télécharge et on installe en local PyTorch sur sa machine.</p>
+<ul>
+<li>Pour cette bidouille, voici ce que l&rsquo;on sélectionne pour PyTorch 2.4.0 : stable, Windows, Pip, Python, CUDA 11.8. Si vous n&rsquo;avez pas une carte graphique puissante sur votre machine, ne sélectionnez pas CUDA mais CPU. Après sélection des choix, on copie la commande (« run this command ») ;</li>
+<li>On colle la commande dans l&rsquo;invite de commande de sa machine lancée en mode administrateur (clic droit sur cmd puis « Exécuter en tant qu&rsquo;administrateur »).</li>
+</ul>
+<p>On télécharge et on installe en local Chocolatey sur sa machine.</p>
+<ul>
+<li>On sélectionne « individual » pour le mode d&rsquo;installation ;</li>
+<li>On copie la commande (« Now run the following command ») ;</li>
+<li>On colle la commande dans Powershell exécuté en administrateur.</li>
+</ul>
+<p>On télécharge et on installe en local ffmpeg sur sa machine.</p>
+<ul>
+<li>Dans PowerShell exécuté en administrateur : « choco install ffmpeg » ;</li>
+<li>On vous demandera une fois « oui ou non » pour l&rsquo;exécution du script, tapez « y » pour oui.</li>
+</ul>
+<p>On télécharge et on installe Whisper sur sa machine.</p>
+<ul>
+<li>On ouvre l&rsquo;invite de commande en administrateur puis : pip install -U openai-whisper</li>
+</ul>
+<p>Après l&rsquo;installation de Python, Pytorch, Chocolatey, ffmpeg et Whisper, vous pouvez maintenant travailler :)</p>
+<ul>
+<li>Placez vos fichiers à transcrire dans un dossier sur votre machine (par exemple, sur le bureau) ;</li>
+<li>Ouvrez le dossier puis cliquez sur la barre de chemin d&rsquo;accès aux fichiers, supprimez tout puis tapez &ldquo;cmd&rdquo;. Cela ouvre l&rsquo;invite de commande qui va pouvoir travailler dans le bon répertoire de fichiers ;</li>
+<li>Admettons, nous souhaitons transcrire un fichier intitulé « test » au format WAV. Ouvrez l’invite de commande puis tapez whisper test.wav ;</li>
+<li>Nous souhaitons transcrire un fichier intitulé « test » au format WAV en utilisant le modèle « large » de Whisper : whisper test.wav &ndash;model large. Plusieurs modèles à disposition, de plus en plus performants, de plus en plus gourmands en ressources (c&rsquo;est la VRAM de la carte graphique qui détermine votre choix de modèle) : tiny, base, small, medium, large, large-v2, large-v3. Lorsque vous utilisez pour la première fois un modèle, l&rsquo;invite de commande doit d&rsquo;abord le télécharger. Par défaut, c&rsquo;est le modèle « small » qui est utilisé ;</li>
+<li>Nous souhaitons transcrire un fichier intitulé « test » au format WAV en indiquant à Whisper la langue du fichier : whisper test.wav &ndash;language French ;</li>
+<li>Nous souhaitons transcrire un fichier intitulé « test » au format WAV, spécifier la langue (fr) et ajouter une tâche de traduction (uk) : whisper test.wav &ndash;language French &ndash;task translate ;</li>
+<li>Pour aller plus loin, tapez whisper &ndash;help ;</li>
+<li>Une fois la transcription terminée dans l&rsquo;invite de commande, vous trouverez plusieurs fichiers dans votre dossier avec les données : un fichier json, un srt, un tsv, un txt, un vtt. Ils contiennent tous le texte de la transcription ;</li>
+<li>Je ne le recommande pas mais vous pouvez transcrire plusieurs fichiers à la fois. Par exemple, avec deux fichiers : whisper test1.wav test2.wav</li>
+</ul>
+<p>Si cela ne fonctionne pas et que vous ne trouvez pas l&rsquo;origine du problème, il convient de tout désinstaller afin de recommencer le tutoriel depuis le début.
+Pour désinstaller proprement :</p>
+<ul>
+<li>Whisper, dans l&rsquo;invite de commande en administrateur : pip uninstall openai-whisper</li>
+<li>FFMPEG, dans l&rsquo;invite de commande en administrateur : choco uninstall ffmpeg</li>
+<li>PyTorch, dans l&rsquo;invite de commande en administrateur : Pip3 uninstall torch torchvision torchaudio</li>
+<li>Python : vous pouvez le désinstaller dans Windows comme un logiciel.</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright">
+          <span>© 2025 Propulsé par <a href="https://gohugo.io">Hugo</a></span>
+      
+        <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Thème</a> réalisé par <a href="https://github.com/panr" target="_blank">panr</a></span>
+        </div>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/MP/bundle.min.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>
