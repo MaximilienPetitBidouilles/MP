@@ -190,7 +190,7 @@
   <h1 class="post-title">
     <a href="https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/">API Zotero et tableau de bord</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">2 minutes de lecture (397 mots)</span></div>
+  <div class="post-meta"><time class="post-date">2025-04-03</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">12 minutes de lecture (2368 mots)</span></div>
 
   
     <span class="post-tags">
@@ -239,7 +239,777 @@
 <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
   <iframe src="/MP/html/10_code_fonctionnel_tableau_de_bord_37.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
-
+<p>Et le code à la suite :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: Arial, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">h2</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ul</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">list-style-type</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ul</span> <span style="color:#f92672">li</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">table</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-collapse</span>: <span style="color:#66d9ef">collapse</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">th</span><span style="color:#f92672">,</span> <span style="color:#f92672">td</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">th</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f2f2f2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#007bff</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">underline</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #researcherInfoContainer {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f9f9f9</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #wordcloudContainer {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #wordcloud {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #publicationChartContainer {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Ajouts CSS pour une meilleure ergonomie */</span>
+</span></span><span style="display:flex;"><span>  #researcherInfoContainer <span style="color:#f92672">h3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #publicationTable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-collapse</span>: <span style="color:#66d9ef">collapse</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #publicationTable <span style="color:#f92672">th</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>  #publicationTable <span style="color:#f92672">td</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #publicationTable <span style="color:#f92672">th</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f2f2f2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #publicationChartContainer {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/highcharts.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/modules/wordcloud.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/modules/boost.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- rest of your code --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/highcharts.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/modules/wordcloud.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://code.highcharts.com/modules/boost.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;Liste des chercheurs&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;ambroise-rendu&#39;); return false;&#34;</span>&gt;Anne-Claude Ambroise-Rendu&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;moine&#39;); return false;&#34;</span>&gt;Caroline Moine&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;barjonet&#39;); return false;&#34;</span>&gt;Aurélie Barjonet&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;jollin&#39;); return false;&#34;</span>&gt;Sophie Bertocchi-Jollin&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;boudet&#39;); return false;&#34;</span>&gt;Alexandra Boudet-Brugal&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;guilhamon&#39;); return false;&#34;</span>&gt;Lise Guilhamon&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;geslot&#39;); return false;&#34;</span>&gt;Jean-Charles Geslot&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;dawes&#39;); return false;&#34;</span>&gt;Simon Dawes&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;bouffartigue&#39;); return false;&#34;</span>&gt;Sylvie Bouffartigue&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;mollier&#39;); return false;&#34;</span>&gt;Jean-Yves Mollier&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;dallet&#39;); return false;&#34;</span>&gt;Sylvie Dallet&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;stead&#39;); return false;&#34;</span>&gt;Evanghelia Stead&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;croisy&#39;); return false;&#34;</span>&gt;Sophie Croisy&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;flechet&#39;); return false;&#34;</span>&gt;Anaïs Fléchet&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;coquet&#39;); return false;&#34;</span>&gt;Cécile Coquet-Mokoko&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;olivesi&#39;); return false;&#34;</span>&gt;Stéphane Olivesi&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;kahan&#39;); return false;&#34;</span>&gt;Alan Kahan&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;cyna&#39;); return false;&#34;</span>&gt;Esther Cyna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;guena&#39;); return false;&#34;</span>&gt;Béatrice Guéna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;bazin&#39;); return false;&#34;</span>&gt;Laurent Bazin&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;giardino&#39;); return false;&#34;</span>&gt;Gianni Giardino&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;malandain&#39;); return false;&#34;</span>&gt;Gilles Malandain&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;ferre&#39;); return false;&#34;</span>&gt;Sandrine Ferré-Rode&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;hache&#39;); return false;&#34;</span>&gt;Françoise Hache-Bissette&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;hagimont&#39;); return false;&#34;</span>&gt;Steve Hagimont&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;hautbois&#39;); return false;&#34;</span>&gt;Xavier Hautbois&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;henneton&#39;); return false;&#34;</span>&gt;Lauric Henneton&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;levy&#39;); return false;&#34;</span>&gt;Paule Levy&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;mougin&#39;); return false;&#34;</span>&gt;Pascal Mougin&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;pauly&#39;); return false;&#34;</span>&gt;Véronique Pauly&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;pothier&#39;); return false;&#34;</span>&gt;Jacques Pothier&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;quenet&#39;); return false;&#34;</span>&gt;Grégory Quenet &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;rodd&#39;); return false;&#34;</span>&gt;Adrien Rodd &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;sourdeval&#39;); return false;&#34;</span>&gt;Matthieu Sourdeval &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;robinet&#39;); return false;&#34;</span>&gt;François Robinet&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;rialland&#39;); return false;&#34;</span>&gt;Ivanne Rialland&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;delporte&#39;); return false;&#34;</span>&gt;Christian Delporte&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showResearcherInfo(&#39;doc&#39;); return false;&#34;</span>&gt;Les doctorants du CHCSC&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- Ajoutez autant de liens pour les chercheurs supplémentaires --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;showAllPublications(); return false;&#34;</span>&gt;Toutes les publications&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;researcherInfoContainer&#34;</span>&gt;<span style="color:#75715e">&lt;!-- L&#39;information sur les chercheurs sera affichée ici --&gt;</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wordcloudContainer&#34;</span>&gt;<span style="color:#75715e">&lt;!-- Le nuage de mots-clés sera affiché ici --&gt;</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;publicationChartContainer&#34;</span>&gt;<span style="color:#75715e">&lt;!-- Le graphique des publications par type sera affiché ici --&gt;</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;publicationTable&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: none;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">th</span>&gt;#&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">th</span>&gt;Titre&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">th</span>&gt;Auteur(s)&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">th</span>&gt;Date&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researchers</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;ambroise-rendu&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VBNTR69L&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2016&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=26665321600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref056736029&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/056736029&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;moine&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;A36SU8KS&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2006&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=26536457700&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref08775116X&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/08775116X&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;barjonet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3A9SYXVH&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2008&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=52963171600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref111587042&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/111587042&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;jollin&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5Z7CRV9E&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2007&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57189004468&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref055391001&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/055391001&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;boudet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MBCBNNBK&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fév 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57346200300&amp;origin=recordPage&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref099069016&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/099069016&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;guilhamon&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CP4ID5PH&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fév 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57204576181&amp;origin=recordPage&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref119706105&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/119706105&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;geslot&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ABZLT2WW&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=37080651600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref078786827&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/078786827&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;dawes&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Y7SKJBT9&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2016&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=37661269400&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref220246416&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/220246416&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;bouffartigue&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CEK68ANV&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2015&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57170860700&amp;origin=recordPage&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref059581980&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/059581980&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;mollier&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3SE7MHIR&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1992&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=26034079700&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref027033732&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/027033732&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;dallet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;WB7DGG5C&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2006&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=55458449300&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref028295250&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/028295250&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;stead&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3PMM4DH3&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2010&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=28168057900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref060786450&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/060786450&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;croisy&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;474DZQUE&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fév 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=55303832900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref176586741&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/176586741&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;flechet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;B9JDFTKP&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2010&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=56330152900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref084278390&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/084278390&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;coquet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3E2BNAS3&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2019&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57189262943&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref050729772&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/050729772&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;olivesi&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;L8XQRBJH&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oct 2015&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=26655991800&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref035701854&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/035701854#&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;kahan&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;62NXYUGN&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;février 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=55100055900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref032503822&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/032503822&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;cyna&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;WYR9Z3BE&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2022&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57205657174&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref255092431&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/255092431&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;guena&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;X9Z6QPA8&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2018&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;bazin&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;R32DNC7C&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oct 2016&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;giardino&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9YKHSE6X&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;janv 2006&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref068720416&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/068720416&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;malandain&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SIFQ3EZ3&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2021&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=38261620200&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref094994005&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/094994005&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;ferre&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3RUZFJYF&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;juin 2012&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=56184514100&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref135612438&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/135612438&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;hache&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;65MLPE7C&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;janv 2006&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=36453808800&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref113369573&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/113369573&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;hagimont&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;K2L8FUSX&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2019&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57170863800&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref224151614&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/224151614&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;hautbois&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;FE8JU9X4&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;janv 2009&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=36166925000&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref069045070&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/069045070&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;henneton&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;QJR79XZR&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2022&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=37114378600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref078718902&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/078718902&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;levy&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;H4MFSSV9&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 1994&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=56225587600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref074694995&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/074694995&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;mougin&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;JHXTUGWN&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2020&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57908784900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;pauly&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;HE22VCFF&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 1998&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;pothier&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9LGSUERH&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;février 1996&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57031606600&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref085708801&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/085708801&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;quenet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;XY9C23BL&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2012&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=6508124393&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref059444487&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/059444487&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rodd&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2R4B5KGH&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;février 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=57191869300&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref15230214X&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/15230214X&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;sourdeval&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;93XGDS8T&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2007&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=8592497700&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref118656716&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/118656716&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;robinet&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;PEU8K333&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2013&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=55831292700&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref176478663&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/176478663&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rialland&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5G2VCIIS&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sept 2016&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=56047650900&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref127126228&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/127126228&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;delporte&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5N265FGE&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">arrivalDate</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;janvier 2006&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scopusUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www2-scopus-com.ezproxy.universite-paris-saclay.fr/authid/detail.uri?authorId=26656499500&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scanrUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://scanr.enseignementsup-recherche.gouv.fr/person/idref032103875&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">idrefUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://www.idref.fr/032103875&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;doc&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5996232&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VRMvU5FwD33qp0MUPyxT9bUZ&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">collectionKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;LPJ29TYR&#39;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ajoutez les chercheurs supplémentaires avec leurs informations
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allPublications</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showResearcherInfo</span>(<span style="color:#a6e22e">researcherKey</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcher</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">researchers</span>[<span style="color:#a6e22e">researcherKey</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcherInfoContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#researcherInfoContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">researcherInfoContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcherInfo</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">researcherInfo</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;h3&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcherKey</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">toUpperCase</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcherKey</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/h3&gt;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;p&gt;Date d\&#39;arrivée dans l\&#39;unité: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">arrivalDate</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/p&gt;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;p&gt;SCOPUS: &lt;a href=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">scopusUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34; target=&#34;_blank&#34;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">scopusUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/p&gt;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;p&gt;scanR: &lt;a href=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">scanrUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34; target=&#34;_blank&#34;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">scanrUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/p&gt;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;p&gt;idRef: &lt;a href=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">idrefUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34; target=&#34;_blank&#34;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">idrefUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/p&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">researcherInfoContainer</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">researcherInfo</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicationTable</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#publicationTable&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">publicationTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;table&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getResearcherPublications</span>(<span style="color:#a6e22e">researcherKey</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">researcherPublications</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">populatePublicationTable</span>(<span style="color:#a6e22e">researcherPublications</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordcloudContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#wordcloudContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">wordcloudContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicationChartContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#publicationChartContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">publicationChartContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Une erreur est survenue:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showAllPublications</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allPublicationsTable</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#publicationTable&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allPublicationsTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;table&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcherInfoContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#researcherInfoContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">researcherInfoContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordcloudContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#wordcloudContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">wordcloudContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicationChartContainer</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#publicationChartContainer&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">publicationChartContainer</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getPublicationsForAllResearchers</span>()
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publications</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">allPublications</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publications</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">populatePublicationTable</span>(<span style="color:#a6e22e">allPublications</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordcloudTitle</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h3&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">wordcloudTitle</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Nuage de mots-clés&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordcloudDiv</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">wordcloudDiv</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;wordcloud&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">wordcloudContainer</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">wordcloudTitle</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">wordcloudContainer</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">wordcloudDiv</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">generateWordCloud</span>(<span style="color:#a6e22e">allPublications</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">generatePublicationChart</span>(<span style="color:#a6e22e">allPublications</span>);
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Une erreur est survenue:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getResearcherPublications</span>(<span style="color:#a6e22e">researcherKey</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcher</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">researchers</span>[<span style="color:#a6e22e">researcherKey</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publications</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">limit</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>; <span style="color:#75715e">// Limite par requête
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Point de départ pour la pagination
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fetchBatch</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">apiUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`https://api.zotero.org/users/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">userId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/collections/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">collectionKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/items?format=json&amp;limit=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">limit</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;start=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">start</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;key=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">researcher</span>.<span style="color:#a6e22e">apiKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Extraction du nombre total de résultats à partir de l&#39;en-tête &#39;Total-Results&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">totalResults</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Total-Results&#39;</span>), <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">start</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">limit</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; ({ <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">totalResults</span> })); <span style="color:#75715e">// Passer les données et totalResults
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      })
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>({ <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">totalResults</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">publications</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publications</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">start</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">totalResults</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fetchBatch</span>(); <span style="color:#75715e">// Récupérer le prochain lot de données
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">publications</span>; <span style="color:#75715e">// Toutes les données ont été récupérées
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fetchBatch</span>().<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Une erreur est survenue:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">publications</span>;
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPublicationsForAllResearchers</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">researcherPromises</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">researchers</span>).<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">researcherKey</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getResearcherPublications</span>(<span style="color:#a6e22e">researcherKey</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Promise.<span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">researcherPromises</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publicationsArray</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allPublications</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">publicationsArray</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publications</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">allPublications</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allPublications</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">publications</span>);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">allPublications</span>;
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Une erreur est survenue:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [];
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">populatePublicationTable</span>(<span style="color:#a6e22e">publications</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tableBody</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#publicationTable tbody&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tableBody</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">filledRowCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Initialisation du compteur de lignes remplies
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publications</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publication</span>, <span style="color:#a6e22e">index</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">authors</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">creators</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">creators</span>.<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">creator</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">creator</span>.<span style="color:#a6e22e">firstName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">creator</span>.<span style="color:#a6e22e">lastName</span>;
+</span></span><span style="display:flex;"><span>  }).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>) <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">date</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">date</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Ignore les lignes avec des données vides
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">title</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">authors</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">filledRowCount</span><span style="color:#f92672">++</span>; <span style="color:#75715e">// Incrémenter le compteur de lignes remplies
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;tr&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">numberCell</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">titleCell</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">authorsCell</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dateCell</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">numberCell</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">filledRowCount</span>; <span style="color:#75715e">// Utiliser le compteur de lignes remplies pour le numéro de la ligne
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">titleCell</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">authorsCell</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">authors</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dateCell</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">numberCell</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">titleCell</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">authorsCell</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">dateCell</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tableBody</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">row</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateWordCloud</span>(<span style="color:#a6e22e">publications</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordData</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Liste des mots à exclure étendue pour inclure également les mots très courts et courants qui n&#39;apportent pas de valeur significative au nuage de mots
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">excludedWords</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;de&#39;</span>, <span style="color:#e6db74">&#39;siècle&#39;</span>, <span style="color:#e6db74">&#39;dune&#39;</span>, <span style="color:#e6db74">&#39;dun&#39;</span>, <span style="color:#e6db74">&#39;cr&#39;</span>, <span style="color:#e6db74">&#39;et&#39;</span>, <span style="color:#e6db74">&#39;du&#39;</span>, <span style="color:#e6db74">&#39;der&#39;</span>, <span style="color:#e6db74">&#39;au&#39;</span>, <span style="color:#e6db74">&#39;le&#39;</span>, <span style="color:#e6db74">&#39;les&#39;</span>, <span style="color:#e6db74">&#39;la&#39;</span>, <span style="color:#e6db74">&#39;un&#39;</span>, <span style="color:#e6db74">&#39;une&#39;</span>, <span style="color:#e6db74">&#39;in&#39;</span>, <span style="color:#e6db74">&#39;en&#39;</span>, <span style="color:#e6db74">&#39;the&#39;</span>, <span style="color:#e6db74">&#39;and&#39;</span>, <span style="color:#e6db74">&#39;dans&#39;</span>, <span style="color:#e6db74">&#39;?&#39;</span>, <span style="color:#e6db74">&#39;of&#39;</span>, <span style="color:#e6db74">&#39;des&#39;</span>, <span style="color:#e6db74">&#39;à&#39;</span>, <span style="color:#e6db74">&#39;est&#39;</span>, <span style="color:#e6db74">&#39;ou&#39;</span>, <span style="color:#e6db74">&#39;von&#39;</span>, <span style="color:#e6db74">&#39;(dir.)&#39;</span>, <span style="color:#e6db74">&#39;compte-rendu&#39;</span>, <span style="color:#e6db74">&#39;und&#39;</span>, <span style="color:#e6db74">&#39;die&#39;</span>, <span style="color:#e6db74">&#39;sur&#39;</span>, <span style="color:#e6db74">&#39;pour&#39;</span>, <span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;&#34;&#39;</span>, <span style="color:#e6db74">&#39;,&#39;</span>, <span style="color:#e6db74">&#39;.&#39;</span>, <span style="color:#e6db74">&#39;;&#39;</span>, <span style="color:#e6db74">&#39;!&#39;</span>, <span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#e6db74">&#39;(&#39;</span>, <span style="color:#e6db74">&#39;)&#39;</span>, <span style="color:#e6db74">&#39;[&#39;</span>, <span style="color:#e6db74">&#39;]&#39;</span>, <span style="color:#e6db74">&#39;{&#39;</span>, <span style="color:#e6db74">&#39;}&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;#&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;|&#39;</span>, <span style="color:#e6db74">&#39;\\&#39;</span>, <span style="color:#e6db74">&#39;&#34;&#39;</span>, <span style="color:#e6db74">&#34;&#39;&#34;</span>, <span style="color:#e6db74">&#39;`&#39;</span>, <span style="color:#e6db74">&#39;“&#39;</span>, <span style="color:#e6db74">&#39;”&#39;</span>, <span style="color:#e6db74">&#39;‘&#39;</span>, <span style="color:#e6db74">&#39;’&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">publications</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publication</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Suppression de tous les caractères spéciaux, y compris les guillemets et conversion en minuscules
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">words</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[^a-zA-Z0-9éèêëàâäôöûüçîïÉÈÊËÀÂÄÔÖÛÜÇÎÏ\s]/g</span>, <span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toLowerCase</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">/\s+/</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">words</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">excludedWords</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">word</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">word</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// Exclut également les mots d&#39;un seul caractère
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">wordData</span>[<span style="color:#a6e22e">word</span>] <span style="color:#f92672">=</span> (<span style="color:#a6e22e">wordData</span>[<span style="color:#a6e22e">word</span>] <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wordcloudData</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">wordData</span>).<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">word</span>, <span style="color:#a6e22e">weight</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">wordData</span>[<span style="color:#a6e22e">word</span>] };
+</span></span><span style="display:flex;"><span>  }).<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">weight</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">weight</span>;
+</span></span><span style="display:flex;"><span>  }).<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">25</span>); <span style="color:#75715e">// Sélection des 25 mots les plus fréquents
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Highcharts</span>.<span style="color:#a6e22e">chart</span>(<span style="color:#e6db74">&#39;wordcloud&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">series</span><span style="color:#f92672">:</span> [{
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;wordcloud&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">wordcloudData</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Occurrences&#39;</span>
+</span></span><span style="display:flex;"><span>    }],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">credits</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">enabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generatePublicationChart</span>(<span style="color:#a6e22e">publications</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicationTypes</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">publications</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">publication</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">itemType</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">publication</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">itemType</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Autre&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">publicationTypes</span>[<span style="color:#a6e22e">type</span>]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">publicationTypes</span>[<span style="color:#a6e22e">type</span>]<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">publicationTypes</span>[<span style="color:#a6e22e">type</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">chartData</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">publicationTypes</span>).<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">type</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicationTypes</span>[<span style="color:#a6e22e">type</span>]
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Highcharts</span>.<span style="color:#a6e22e">chart</span>(<span style="color:#e6db74">&#39;publicationChartContainer&#39;</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">chart</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Les publications par type&#39;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xAxis</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;category&#39;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yAxis</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Nombre de publications&#39;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">series</span><span style="color:#f92672">:</span> [{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Nombre de publications&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">chartData</span>
+</span></span><span style="display:flex;"><span>      }],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">credits</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">enabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div>
       </div></div>
 
   
