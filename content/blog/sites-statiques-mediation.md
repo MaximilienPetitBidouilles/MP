@@ -22,16 +22,18 @@ Déployer et mettre en ligne un site web pour un projet (recherche, médiation, 
 
 Les générateurs de sites statiques conviennent parfaitement à la demande car il ne s'agit, en l'état, que de **déployer des pages avec des contenus fixes** (ou l'usage d'*iframes* pour les contenus extérieurs : les vidéos).
 
-Le site statique est une solution intéressante pour les projets SHS qui, le plus souvent, alimentent les sites et plateformes de médiation en fonction de **la réalité des financements**. Donc, de fait, il peut parfois y avoir plusieurs mois, années, avant l'ajout d'éventuels contenus. Donc il faut un site simple à maintenir sur le temps long et qui ne présente pas de failles de sécurité qui pourraient mettre fin à sa mise en ligne.
+Le site statique est une solution intéressante pour les projets SHS qui, le plus souvent, alimentent les sites et plateformes de médiation en fonction de **la réalité des financements**. Donc, de fait, il peut parfois y avoir plusieurs mois, années, avant l'ajout d'éventuels contenus. Il faut un site simple à maintenir sur le temps long et qui ne présente pas de failles de sécurité qui pourraient mettre fin à sa mise en ligne.
 
 On s'oriente vers **Hugo** et, en particulier, les thèmes **Hugo Blox** (anciennement *Wowchemy Hugo Modules*) car ils sont pensés, à l'origine, pour un usage académique (déployer des sites pour des conférences, des portfolios pour les chercheurs).
 
-Les thèmes Hugo Blox présentent également l'avantage d'être compatibles avec **Netlify pour la mise en ligne**, et **Netlify CMS (dorénavant Decap CMS) pour la gestion des contenus**. Ces deux possibilités améliorent encore la facilité pour prendre en main cette solution. L'usage de générateurs de sites statiques n'est pas complexe mais le fait de maintenir des fichiers sans CMS peut parfois rebuter des utilisateurs débutants. Le site du projet en question dispose certes d'une personne pour administrer (moi même !) mais il est important de **penser à des solutions simples et pérennes** si jamais les personnels en charge des plateformes changent de trajectoire professionnelle (il y a un véritable *cimetière* des sites et bases en SHS, et c'est malheureux). Il faut donc pouvoir se préoccuper de la pérennité des solutions que nous mettons en oeuvre, et pas seulement de la faisabilité ou de la communication à un instant "T".
+Les thèmes Hugo Blox présentent également l'avantage d'être compatibles avec **Netlify pour la mise en ligne**, et **Netlify CMS (dorénavant Decap CMS) pour la gestion des contenus**. Ces deux possibilités améliorent encore la facilité pour prendre en main cette solution. L'usage de générateurs de sites statiques n'est pas complexe mais le fait de maintenir des fichiers sans CMS peut parfois rebuter des utilisateurs débutants. 
+
+Le site du projet en question dispose certes d'une personne pour administrer (moi même !) mais il est important de **penser à des solutions simples et pérennes** si jamais les personnels en charge des plateformes changent de trajectoire professionnelle (il y a un véritable *cimetière* des sites et bases en SHS, et c'est malheureux). Il faut donc pouvoir se préoccuper de la pérennité des solutions que nous mettons en oeuvre, et pas seulement de la faisabilité ou de la communication à un instant "T".
 
 **Une bidouille plus longue sera consacrée à la formation des publics pour prendre en main les générateurs de sites statiques.**
 
 ## Pour aller plus loin
 
 * <a href="https://gohugo.io/documentation/" target="_blank">La documentation d'Hugo</a>
-* <a href="https://gohugo.io/documentation/" target="_blank">Les templates d'Hugo Blox </a> et <a href="https://docs.hugoblox.com/" target="_blank">la documentation</a>
+* <a href="https://hugoblox.com/templates/" target="_blank">Les templates d'Hugo Blox </a> et <a href="https://docs.hugoblox.com/" target="_blank">la documentation</a>
 * <a href="https://www.netlify.com/" target="_blank">Netlify</a> 
