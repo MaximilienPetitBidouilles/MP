@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Apr 2025 20:25:29 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 06 Apr 2025 12:36:59 +0200</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Appuyer la médiation scientifique grâce aux sites statiques</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/sites-statiques-mediation/</link>
+      <pubDate>Sun, 06 Apr 2025 12:36:59 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/sites-statiques-mediation/</guid>
+      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;Des chercheurs souhaitent &lt;strong&gt;valoriser des vidéos pédagogiques et de médiation scientifique&lt;/strong&gt; sur une thématique : &lt;em&gt;L&amp;rsquo;illustration en questions&lt;/em&gt;, qui concerne la presse, les revues et le livre du XIXe au XXIe siècle et leur remédiation par la numérisation. Les vidéos sont visibles sur Youtube mais il est nécessaire de mettre en ligne un site permettant de présenter le projet (Histoires Vivantes) et lui donner une visibilité (pour les publics et d&amp;rsquo;éventuels financeurs à l&amp;rsquo;avenir). &lt;strong&gt;Ce site doit être rapide à concevoir, facile à maintenir sur le temps long (les MAJ de contenus seront rares), rapide et sécurisé&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Transcrire des entretiens avec Whisper</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/</link>

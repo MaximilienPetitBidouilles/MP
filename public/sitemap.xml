@@ -3,15 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/</loc>
-    <lastmod>2025-04-03T20:25:29+02:00</lastmod>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
+  </url><url>
+    <loc>https://maximilienpetitbidouilles.github.io/MP/blog/sites-statiques-mediation/</loc>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
   </url><url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/blog/</loc>
-    <lastmod>2025-04-03T20:25:29+02:00</lastmod>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
   </url><url>
-    <loc>https://maximilienpetitbidouilles.github.io/MP/tags/llm/</loc>
-    <lastmod>2025-04-03T20:25:29+02:00</lastmod>
+    <loc>https://maximilienpetitbidouilles.github.io/MP/tags/hugo/</loc>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
+  </url><url>
+    <loc>https://maximilienpetitbidouilles.github.io/MP/tags/m%C3%A9diation-scientifique/</loc>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
   </url><url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/tags/</loc>
+    <lastmod>2025-04-06T12:36:59+02:00</lastmod>
+  </url><url>
+    <loc>https://maximilienpetitbidouilles.github.io/MP/tags/llm/</loc>
     <lastmod>2025-04-03T20:25:29+02:00</lastmod>
   </url><url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/blog/whisper-transcrire/</loc>
@@ -36,9 +45,6 @@
     <lastmod>2025-04-01T14:45:33+02:00</lastmod>
   </url><url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/blog/weasyprint-generer-pdf/</loc>
-    <lastmod>2025-03-25T22:35:15+01:00</lastmod>
-  </url><url>
-    <loc>https://maximilienpetitbidouilles.github.io/MP/tags/hugo/</loc>
     <lastmod>2025-03-25T22:35:15+01:00</lastmod>
   </url><url>
     <loc>https://maximilienpetitbidouilles.github.io/MP/tags/python/</loc>
