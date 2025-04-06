@@ -18,7 +18,7 @@ Déployer et mettre en ligne un site web pour un projet (recherche, médiation, 
 
 ## La bidouille
 
-**Le site en question** : [https://histoires-vivantes.netlify.app/](https://histoires-vivantes.netlify.app/https:/)
+**<a href="https://histoires-vivantes.netlify.app/" target="_blank">Le site en question</a>**
 
 Les générateurs de sites statiques conviennent parfaitement à la demande car il ne s'agit, en l'état, que de **déployer des pages avec des contenus fixes** (ou l'usage d'*iframes* pour les contenus extérieurs : les vidéos).
 
@@ -32,6 +32,6 @@ Les thèmes Hugo Blox présentent également l'avantage d'être compatibles avec
 
 ## Pour aller plus loin
 
-* La documentation d'Hugo (https://gohugo.io/documentation/)
-* Les templates d'Hugo Blox (https://hugoblox.com/templates/) et la documentation (https://docs.hugoblox.com/)
-* Netlify
+* <a href="https://gohugo.io/documentation/" target="_blank">La documentation d'Hugo</a>
+* <a href="https://gohugo.io/documentation/" target="_blank">Les templates d'Hugo Blox </a> et <a href="https://docs.hugoblox.com/" target="_blank">la documentation</a>
+* <a href="https://www.netlify.com/" target="_blank">Netlify</a> 
