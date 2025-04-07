@@ -38,4 +38,4 @@ Le plus souvent, chaque page du tutoriel contient des explications, une vidéo d
 
 * <a href="https://tropy.org/" target="_blank">Tropy</a>
 * <a href="https://omeka.org/s/" target="_blank">Omeka S</a>
-* <a href="https://omeka.org/s/" target="_blank">Site personnel de Pascal Martinolli</a>
+* <a href="http://martinolli.free.fr/" target="_blank">Site personnel de Pascal Martinolli</a>
