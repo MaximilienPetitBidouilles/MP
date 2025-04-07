@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zotero on Maximilien Petit</title>
-    <link>https://maximilienpetitbidouilles.github.io/MP/tags/zotero/</link>
-    <description>Recent content in Zotero on Maximilien Petit</description>
+    <title>Pédagogie on Maximilien Petit</title>
+    <link>https://maximilienpetitbidouilles.github.io/MP/tags/p%C3%A9dagogie/</link>
+    <description>Recent content in Pédagogie on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Apr 2025 13:39:57 +0200</lastBuildDate>
-    <atom:link href="https://maximilienpetitbidouilles.github.io/MP/tags/zotero/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://maximilienpetitbidouilles.github.io/MP/tags/p%C3%A9dagogie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Former les publics : Zotero</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/former-les-publics-zotero/</link>
       <pubDate>Mon, 07 Apr 2025 13:39:57 +0200</pubDate>
       <guid>https://maximilienpetitbidouilles.github.io/MP/blog/former-les-publics-zotero/</guid>
       <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;Il n&amp;rsquo;est pas rare, en laboratoire SHS, d&amp;rsquo;être amené à devoir former des publics sur des outils. Le plus souvent, il s&amp;rsquo;agit d&amp;rsquo;étudiants de L3, M1, M2, et des doctorants. Le logiciel Zotero est par exemple incontournable pour aborder la gestion des références bibliographiques. Parfois, il est abordé dans des UE de méthodologie, ou alors, dans des formations dispensées par des personnels de l&amp;rsquo;Information Scientifique et Technique (I.S.T.) en bibliothèque. C&amp;rsquo;est un outil très complet et simple à prendre en main et les contenus pédagogiques en ligne ne manquent pas.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>API Zotero et tableau de bord</title>
-      <link>https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/</link>
-      <pubDate>Thu, 03 Apr 2025 13:29:30 +0200</pubDate>
-      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/tableau-de-bord/</guid>
-      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;On souhaite utiliser &lt;strong&gt;un tableau de bord pour suivre l&amp;rsquo;évolution d&amp;rsquo;un chantier documentaire&lt;/strong&gt;, en l&amp;rsquo;occurrence le dépôt des notices HAL d&amp;rsquo;un laboratoire SHS pour la dernière campagne HCERES. Ce chantier repose, entre autres, sur l&amp;rsquo;utilisation d&amp;rsquo;une bibliothèque Zotero pour la validation des métadonnées des notices qui sont importées ensuite sur HAL par le biais de X2HAL.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
