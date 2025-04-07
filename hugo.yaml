@@ -26,7 +26,7 @@ params:
   images:
     - /og-image.png
   autoCover: true
-  latestContentSize: 5
+  latestContentSize: 10
   logo:
     logoText: Maximilien Petit
     logoHomeLink: https://maximilienpetitbidouilles.github.io/MP/
