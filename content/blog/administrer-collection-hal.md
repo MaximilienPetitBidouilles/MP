@@ -24,11 +24,11 @@ On souhaite **modifier le *template* (modèle) HTML et CSS de la collection HAL 
 
 On rappelle, si vous avez les droits de gestion de la collection, qu'il faut modifier les contenus en étant connecté directement sur la page d'accueil de votre collection en cliquant sur le bouton orange en bas intitulé "Modifier le contenu de la page". 
 
-<img src="/MP/images/hal_1.png" alt="HAL HTML CSS 1" style="width:100%; height:auto;">
+<img src="/MP/images/hal_1.PNG" alt="HAL HTML CSS 1" style="width:100%; height:auto;">
 
 Ensuite, dans l'éditeur, il faut passer par le bouton "code source" pour modifier les informations. Copiez et collez les informations de votre *template* dans l'éditeur puis sauvegardez. 
 
-<img src="/MP/images/hal_2.png" alt="HAL HTML CSS 2" style="width:100%; height:auto;">
+<img src="/MP/images/hal_2.PNG" alt="HAL HTML CSS 2" style="width:100%; height:auto;">
 
 Dans le cas présent, pour ma collection, voici ce que cela donne : 
 
@@ -57,7 +57,7 @@ Vous devez ensuite **adapter la feuille de style CSS** de l'Inria et l'ajouter p
 
 Toujours en étant connecté, et avec les droits, cliquez sur "Administrer dans HAL" puis sur "Site Web" et enfin sur "Apparence".
 
-<img src="/MP/images/hal_3.png" alt="HAL HTML CSS 3" style="width:100%; height:auto;">
+<img src="/MP/images/hal_3.PNG" alt="HAL HTML CSS 3" style="width:100%; height:auto;">
 
 Il faut choisir le type de personnalisation "Avancé" puis copier et coller dans l'éditeur les informations de votre CSS. le code à la suite pour ma collection, toujours basé sur l'excellent travail de l'Inria : 
 
