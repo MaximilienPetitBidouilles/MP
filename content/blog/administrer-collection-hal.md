@@ -10,21 +10,21 @@ readingTime: true
 
 # Le problème
 
-On souhaite modifier le *template* (modèle) HTML et CSS de la collection HAL d'une unité de recherche SHS. HAL met à disposition des outils qui évoluent et qui s'améliorent mais il n'est pas toujours simple de prendre en main les fonctionnalités de gestion/administration des collections. Il y a un système de "widget" et un éditeur *WYSIWYG* (What You See Is What You Get pour "ce que vous voyez est ce que vous obtenez") mais, de fait, ce n'est pas un évident d'avoir quelque chose qui nous convient.
+On souhaite **modifier le *template* (modèle) HTML et CSS de la collection HAL d'une unité de recherche SHS**. HAL met à disposition des outils qui évoluent et qui s'améliorent mais il n'est pas toujours simple de prendre en main les fonctionnalités de gestion/administration des collections. Il y a un système de "widget" et un éditeur *WYSIWYG* (What You See Is What You Get pour "ce que vous voyez est ce que vous obtenez") mais, de fait, ce n'est pas évident d'avoir quelque chose qui nous convient précisément.
 
 ## Qui peut aider ?
 
-La gestion/administration de HAL, à l'échelle d'une université, dépend des personnels de la filière bibliothèque. Et, en fonction des procédures de l'université, la gestion des collections est déléguée en laboratoire à un personnel de l'unité (si le personnel existe...). Parfois l'université impose un template commun aux unités, parfois non.
+**La gestion/administration de HAL, à l'échelle d'une université, dépend des personnels de la filière bibliothèque**. Et, en fonction des procédures de l'université, la gestion des collections est déléguée en laboratoire à un personnel de l'unité (si le personnel existe...). Parfois l'université impose un *template* commun aux unités, parfois non.
 
 ## La bidouille
 
-Le résultat est visible ici : 
+**Le résultat est visible ici : <a href="https://hal.science/CHCSC" target="_blank">Collection HAL</a>**
 
-On s'inspire comme souvent de l'INRIA qui met à disposition des feuilles de style qu'il convient de modifier en fonction de vos attentes. De plus la démarche est documentée dans un tutoriel que j'ajoute en fin d'article.
+**On s'inspire comme souvent de l'Inria** qui met à disposition des feuilles de style qu'il convient de modifier en fonction de vos attentes. De plus la démarche est documentée dans un tutoriel que j'ajoute en fin d'article.
 
 On rappelle, si vous avez les droits de gestion de la collection, qu'il faut modifier les contenus en étant connecté directement sur la page d'accueil de votre collection en cliquant sur le bouton orange en bas intitulé "Modifier le contenu de la page". 
 
-Ensuite, dans l'éditeur, il faut passer par le bouton "code source" pour modifier les informations. Copiez et collez les informations de votre template dans l'éditeur puis sauvegardez. Dans le cas présent, pour ma collection, voici ce que cela donne : 
+Ensuite, dans l'éditeur, il faut passer par le bouton "code source" pour modifier les informations. Copiez et collez les informations de votre *template* dans l'éditeur puis sauvegardez. Dans le cas présent, pour ma collection, voici ce que cela donne : 
 
 {{< code language="html" title="Template page d'accueil collection HAL" open="false" >}}
 
@@ -47,11 +47,11 @@ Ensuite, dans l'éditeur, il faut passer par le bouton "code source" pour modifi
 
 {{< /code >}}
 
-Vous devez ensuite adapter la feuille de style CSS de l'INRIA et l'ajouter pour votre collection. Ceci vous permet de paramétrer des éléments mise en forme (les couleurs de chaque menu, par exemple). 
+Vous devez ensuite **adapter la feuille de style CSS** de l'Inria et l'ajouter pour votre collection. Ceci vous permet de paramétrer des éléments de mise en forme (les couleurs de chaque menu, par exemple). 
 
 Toujours en étant connecté, et avec les droits, cliquez sur "Administrer dans HAL" puis sur "Site Web" et enfin sur "Apparence".
 
-Il faut choisir le type de personnalisation "Avancé" puis copier et coller dans l'éditeur les informations de votre CSS. le code à la suite pour ma collection, toujours basé sur l'excellent travail de l'INRIA : 
+Il faut choisir le type de personnalisation "Avancé" puis copier et coller dans l'éditeur les informations de votre CSS. le code à la suite pour ma collection, toujours basé sur l'excellent travail de l'Inria : 
 
 {{< code language="CSS" title="CSS Collection HAL" open="false" >}}
 
