@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Apr 2025 13:39:57 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 10:25:03 +0200</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collection HAL et template HTML-CSS</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/administrer-collection-hal/</link>
+      <pubDate>Tue, 08 Apr 2025 10:25:03 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/administrer-collection-hal/</guid>
+      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;On souhaite modifier le &lt;em&gt;template&lt;/em&gt; (modèle) HTML et CSS de la collection HAL d&amp;rsquo;une unité de recherche SHS. HAL met à disposition des outils qui évoluent et qui s&amp;rsquo;améliorent mais il n&amp;rsquo;est pas toujours simple de prendre en main les fonctionnalités de gestion/administration des collections. Il y a un système de &amp;ldquo;widget&amp;rdquo; et un éditeur &lt;em&gt;WYSIWYG&lt;/em&gt; (What You See Is What You Get pour &amp;ldquo;ce que vous voyez est ce que vous obtenez&amp;rdquo;) mais, de fait, ce n&amp;rsquo;est pas un évident d&amp;rsquo;avoir quelque chose qui nous convient.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Former les publics : Zotero</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/former-les-publics-zotero/</link>
