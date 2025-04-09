@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Auto-héberger pour la pédagogie et la recherche :: Maximilien Petit</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille L&rsquo;installation En bonus : les usages Pour aller plus loin Pour information Ne pratiquez pas cette bidouille chez vous si vous n&rsquo;avez pas quelques bases en informatique. Mais en même temps, c&rsquo;est un bon moyen d&rsquo;apprendre par la pratique&hellip;
+Le problème On souhaite doter une unité de recherche SHS d&rsquo;un serveur abordable, rapide et sécurisé. Et ce pour plusieurs raisons : se &ldquo;libérer&rdquo; des contraintes et du coût du cloud propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d&rsquo;auto-hébergement doit également avoir un &ldquo;potentiel pédagogique&rdquo; pour les formations et UE d&rsquo;humaninés-numériques. C&rsquo;est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://maximilienpetitbidouilles.github.io/MP/blog/auto-hebergement-peda-recherche/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/home.min.6f0be37eff14a939121fb1847bffc9d825bc44200ed6ff6ce9d378eff96c203e.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://maximilienpetitbidouilles.github.io/MP/favicon.png">
+<link rel="apple-touch-icon" href="https://maximilienpetitbidouilles.github.io/MP/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Auto-héberger pour la pédagogie et la recherche">
+<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille L&rsquo;installation En bonus : les usages Pour aller plus loin Pour information Ne pratiquez pas cette bidouille chez vous si vous n&rsquo;avez pas quelques bases en informatique. Mais en même temps, c&rsquo;est un bon moyen d&rsquo;apprendre par la pratique&hellip;
+Le problème On souhaite doter une unité de recherche SHS d&rsquo;un serveur abordable, rapide et sécurisé. Et ce pour plusieurs raisons : se &ldquo;libérer&rdquo; des contraintes et du coût du cloud propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d&rsquo;auto-hébergement doit également avoir un &ldquo;potentiel pédagogique&rdquo; pour les formations et UE d&rsquo;humaninés-numériques. C&rsquo;est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.
+" />
+<meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/auto-hebergement-peda-recherche/" />
+<meta property="og:site_name" content="Maximilien Petit" />
+
+  <meta property="og:image" content="https://maximilienpetitbidouilles.github.io/MP/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-04-09 10:37:51 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://maximilienpetitbidouilles.github.io/MP/">
+  <div class="logo">
+    Maximilien Petit
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/MP/">Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog">Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv">Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about">À propos</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/MP/" >Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog" >Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags" >Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv" >Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about" >À propos</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/auto-hebergement-peda-recherche/">Auto-héberger pour la pédagogie et la recherche</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-04-09</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">7 minutes de lecture (1336 mots)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/yunohost/">YunoHost</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <div class="custom-toc">
+    <details open>
+      <summary style="cursor: pointer; font-weight: bold; margin-bottom: 10px;">Table des matières</summary>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#le-problème">Le problème</a>
+      <ul>
+        <li><a href="#qui-peut-aider-">Qui peut aider ?</a></li>
+        <li><a href="#la-bidouille">La bidouille</a>
+          <ul>
+            <li><a href="#linstallation">L&rsquo;installation</a></li>
+          </ul>
+        </li>
+        <li><a href="#en-bonus--les-usages">En bonus : les usages</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+  </div>
+<div style="background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+  
+<details>
+  <summary>Pour information</summary>
+  <p>Ne pratiquez pas cette bidouille chez vous si vous n&rsquo;avez pas quelques bases en informatique. Mais en même temps, c&rsquo;est un bon moyen d&rsquo;apprendre par la pratique&hellip;</p>
+</details>
+
+</div>
+<h1 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p><strong>On souhaite doter une unité de recherche SHS d&rsquo;un serveur abordable, rapide et sécurisé</strong>. Et ce pour plusieurs raisons : se &ldquo;libérer&rdquo; des contraintes et du coût du <em>cloud</em> propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d&rsquo;auto-hébergement doit également avoir un &ldquo;potentiel pédagogique&rdquo; pour les formations et UE d&rsquo;humaninés-numériques. C&rsquo;est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.</p>
+<p><strong>Cet auto-hébergement doit pouvoir offrir également la possibilité d&rsquo;héberger une instance Omeka S</strong> afin de tester des bases de données et projets SHS. Cette instance est utilisée comme une <em>sandbox</em>/un bac à sables, le déploiement en ligne s&rsquo;effectue ensuite par d&rsquo;autres biais (principalement, les services d&rsquo;Huma-Num).</p>
+<h2 id="qui-peut-aider-">Qui peut aider ?<a href="#qui-peut-aider-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><strong>Personne !</strong> Enfin, si, c&rsquo;est évidemment de l&rsquo;informatique donc cela relève des personnels ITRF de la BAP E. Néanmoins, autant prévenir : <strong>l&rsquo;auto-hébergement n&rsquo;est pas une pratique réalisable au sein d&rsquo;une université car, bien entendu, cela va a l&rsquo;encontre des règles de sécurité et des procédures</strong>. Il faut donc pratiquer cela chez soi, et avec parcimonie. On le verra plus loin, l&rsquo;auto-hébergement est selon moi une pratique sécurisée, et offre toutes les possibilités de gestion et d&rsquo;administration d&rsquo;un serveur classique mais c&rsquo;est un usage <em>exotique</em> donc il est tout à fait normal de ne pas prendre de risques.</p>
+<p>J&rsquo;ajoute que les unités de recherche SHS peuvent, en complément d&rsquo;un auto-hébergement hors les murs, installer dans leurs locaux des serveurs domestiques (NAS) qui, là, seront sécurisés par les services informatiques. Et les plus chanceux dans les universités les plus dotées pourront utiliser des <em>data center</em>/centres de données.</p>
+<p><strong>Mais, selon moi (conviction personnelle), toutes ces solutions sont complémentaires</strong>. J&rsquo;estime que les pratiques pédagogiques et de recherche en SHS ne nécessitent pas nécessairement l&rsquo;achat de serveurs rutilants, onéreux. D&rsquo;autant plus quand vous manquez de personnels pour gérer au quotidien ce matériel rutilant, onéreux.</p>
+<h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>On s&rsquo;oriente vers l&rsquo;installation de YunoHost sur un Raspberry Pi 4 Model B.</p>
+<p><strong>YunoHost est une application qui va vous permettre de gérer et administrer votre serveur</strong>. Il y a toute une communauté pour faire évoluer ce système d&rsquo;exploitation et il est simple à prendre en main. C&rsquo;est l&rsquo;une des solutions les plus pertinentes pour la pratique de l&rsquo;auto-hébergement. Yunohost repose sur Debian, est doté d&rsquo;une interface web bien pensée et permet de <strong>déployer un catalogue d&rsquo;applications en quelques clics</strong> : <a href="https://apps.yunohost.org/" target="_blank">la liste est ici</a></p>
+<p>Pour les unités de recherche, ce catalogue est précieux. Vous pouvez installer et essayer, sans entraves, Nextcloud, FreshRSS, Collabora Online, Penpot, Joplin, Paperless-ngx, Dokuwiki, Mastodon, WordPress, HedgeDoc, Kanboard, Lufi, GitLab, Castopod, Weblate, Moodle, Overleaf, JupyterLab, eLabFTW, OJS, Omeka S, etc.</p>
+<p><strong>Un Raspberry Pi est un &ldquo;nano-ordinateur monocarte à processeur ARM&rdquo;</strong>. Imaginez un ordinateur de la taille d&rsquo;une carte de crédit, qui coûte moins de 100 euros. Ces machines sont pensées en amont par des chercheurs de Cambridge et une fondation. L&rsquo;idée étant d&rsquo;avoir du matériel flexible et à bas coût afin de démocratiser la pratique de l&rsquo;informatique. <strong>Il y a une communauté internationale (de la recherche à la simple bidouille) pour déployer des projets, des méthodes, et des pratiques où le Raspberry Pi est au centre.</strong></p>
+<h3 id="linstallation">L&rsquo;installation<a href="#linstallation" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Pour installer Yunohost sur Raspberry Pi 4, je recommande d&rsquo;avoir <strong>le logiciel SD Card Formater</strong> pour formater une carte micro SD et <strong>Etcher</strong> pour &ldquo;flasher&rdquo; les images. Les liens en fin d&rsquo;article.</p>
+<ul>
+<li>
+<p>Télécharger l&rsquo;image sur le site de Yunohost : <a href="https://repo.yunohost.org/images/yunohost-bookworm-12.0-rpi-stable.img.zip " target="_blank">ici</a></p>
+</li>
+<li>
+<p>Flashez l&rsquo;image sur la carte micro SD en utilisant Etcher ;</p>
+</li>
+<li>
+<p>Insérer la carte dans votre Raspberry Pi et allumez-le, sans oublier de le relier via ethernet à votre routeur/box à la maison et via hdmi à un écran pour vérifier le bon fonctionnement de l&rsquo;installation ;</p>
+</li>
+<li>
+<p>Notez dans un coin l&rsquo;IP de votre Raspberry ;</p>
+</li>
+<li>
+<p>Avec un PC ou ordinateur portable sur le même réseau que le Raspberry, ouvrez le lien suivant : <a href="https://yunohost.local">https://yunohost.local</a></p>
+</li>
+<li>
+<p>Suivez les indications qui s&rsquo;affichent pour le paramétrage : choix du nom de domaine (votre propre nom de domaine ou un nom de domaine déjà paramétré pour Yunohost. Je recommande la dernière solution pour une première installation), du mot de passe administrateur (qui sera utile également pour le SSH et le SFTP). La &ldquo;post-installation&rdquo; peut s&rsquo;avérer longue, c&rsquo;est normal ;</p>
+</li>
+<li>
+<p>Connectez-vous avec votre mot de passe admin et créez un premier utilisateur avec un mot de passe différent. En effet, l&rsquo;admin se connecte à l&rsquo;interface d&rsquo;aministration mais pas sur le portail des utilisateurs. Cliquez sur &ldquo;Comptes&rdquo; et &ldquo;Nouveau compte&rdquo; pour l&rsquo;ajout de cet utilisateur ;</p>
+</li>
+<li>
+<p>Lancez un premier diagnostic de votre installation : cliquez sur &ldquo;Diagnostic&rdquo; ;</p>
+</li>
+<li>
+<p>Certaines opérations à faire en fonction des résultats du diagnostic, le plus souvent : ouvrir les ports utiles à votre usage sur votre box FAI. Pour ce faire, la procédure diffère en fonction de votre FAI. Il s&rsquo;agit d&rsquo;activer le UPnP et de créer des règles NAT/PAT dans votre interface admin de box, tout en adaptant le pare-feu. N&rsquo;ouvrez que ce qui est réellement nécessaire ;</p>
+</li>
+<li>
+<p>Mettez à jour le système Yunohost avant d&rsquo;installer des applications : &ldquo;Mise à jour du système&rdquo; ;</p>
+</li>
+<li>
+<p>Ajoutez un certificat <strong>Let&rsquo;s Encrypt</strong> pour rassurer les utilisateurs de votre portail, en fonction de l&rsquo;usage souhaité : cliquez sur &ldquo;Domaines&rdquo;, puis votre domaine, et enfin &ldquo;Certificate&rdquo; ;</p>
+</li>
+<li>
+<p>Je recommande d&rsquo;installer un client mail en passant par le catalogue des applications car Yunohost vous permettra de recevoir des alertes par mail pour gérer votre serveur. L&rsquo;application <em>Roundcube</em> est par exemple intéressante.</p>
+</li>
+</ul>
+<p><strong>Ensuite, c&rsquo;est à vous de jouer ! Et d&rsquo;apprendre à gérer votre serveur. C&rsquo;est-à-dire, de réaliser régulièrement des diagnostics, de mettre à jour des applications, d&rsquo;effectuer des sauvegardes. Progressez à tâtons, ne déployez les services que temporairement, ne sauvegardez pas  des données critiques et essentielles sans avoir d&rsquo;autres solutions de sauvegarde (la règle des 3-2-1).</strong></p>
+<p>Ci-dessous, des captures d&rsquo;écran de l&rsquo;interface Yunohost. Vous pouvez ainsi réaliser que la solution offre des fonctionnalités pour faire des diagnostics de sécurité, des sauvegardes de vos installations, des mises à jour de votre système, une gestion de vos domaines et de vos utilisateurs.</p>
+<h2 id="en-bonus--les-usages">En bonus : les usages<a href="#en-bonus--les-usages" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Depuis que je pratique l&rsquo;auto-hébergement (3 ans), je n&rsquo;ai eu aucun problème de sécurité, aucun problème de plantage matériel et j&rsquo;ai eu la possibilité de constater que les usages sont multiples pour la recherche et la pédagogie :</p>
+<ul>
+<li>J&rsquo;ai déployé des instances Omeka S utilisées dans des cours et en amont de certains projets de recherche ;</li>
+<li>J&rsquo;ai permis à des doctorants et des chercheurs de bénéficier d&rsquo;espaces <em>cloud</em> temporaires (50Go sur Nextcloud, sur une période déterminée) pour gérer aisément des données ;</li>
+<li>J&rsquo;ai donné la possibilité à certains services, toujours temporairement, de déployer et tester des applications (par exemple un cahier de laboratoire électronique) ;</li>
+<li>J&rsquo;ai initié des étudiants de M1 à la pratique de l&rsquo;auto-hébergement et certains, désormais en thèse, continuent afin de sauvegarder leurs données. Aucune perte de fichiers à déplorer à ce jour ;</li>
+<li>Le serveur est parfois utilisé comme un <em>bac à sable</em> temporaire pour des formations doctorales centrées sur un outil ;</li>
+</ul>
+<p><strong>L&rsquo;idée étant toujours de déployer des solutions temporaires pour &ldquo;débloquer&rdquo; les pratiques.</strong></p>
+<p>Au-delà de l&rsquo;auto-hébergement, <strong>l&rsquo;intérêt également d&rsquo;utiliser du matériel flexible comme le Raspbery Pi, c&rsquo;est de pouvoir le détourner facilement et rapidement pour d&rsquo;autres usages inattendus.</strong></p>
+<p>Par exemple, ci-dessous, la photo d&rsquo;une &ldquo;station d&rsquo;écoute&rdquo; permettant à des publics d&rsquo;un colloque célébrant les 30 ans d&rsquo;une unité de recherche d&rsquo;écouter les créations sonores et podcasts du laboratoire. La station est basée sur un Raspberry Pi 4 Modèle B, un module de carte son, un écran tactile, et des logiciels libres (Raspberry Pi OS, Tenacity, VLC, Qmmp).</p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin<a href="#pour-aller-plus-loin" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://doc.yunohost.org/fr" target="_blank">Documentation de YunoHost</a></li>
+<li><a href="https://www.raspberrypi.com/" target="_blank">Site officiel de Raspberry Pi</a></li>
+<li><a href="https://www.cl.cam.ac.uk/projects/raspberrypi/" target="_blank">Raspberry Pi et University of Cambridge</a></li>
+<li><a href="https://www.sdcard.org/downloads/formatter/" target="_blank">SD Card Formater</a></li>
+<li><a href="https://etcher.balena.io/" target="_blank">Etcher</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright">
+          <span>© 2025 Propulsé par <a href="https://gohugo.io">Hugo</a></span>
+      
+        <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Thème</a> réalisé par <a href="https://github.com/panr" target="_blank">panr</a></span>
+        </div>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/MP/bundle.min.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>

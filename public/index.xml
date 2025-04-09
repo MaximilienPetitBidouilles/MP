@@ -6,8 +6,15 @@
     <description>Recent content on Maximilien Petit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Apr 2025 10:25:03 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2025 10:37:51 +0200</lastBuildDate>
     <atom:link href="https://maximilienpetitbidouilles.github.io/MP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto-héberger pour la pédagogie et la recherche</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/auto-hebergement-peda-recherche/</link>
+      <pubDate>Wed, 09 Apr 2025 10:37:51 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/auto-hebergement-peda-recherche/</guid>
+      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&#xA;          &lt;ul&gt;&#xA;            &lt;li&gt;&lt;a href=&#34;#linstallation&#34;&gt;L&amp;rsquo;installation&lt;/a&gt;&lt;/li&gt;&#xA;          &lt;/ul&gt;&#xA;        &lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#en-bonus--les-usages&#34;&gt;En bonus : les usages&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;div style=&#34;background-color: #fff7f1; border: 1px solid #d22000; padding: 15px; border-radius: 8px; margin-bottom: 20px;&#34;&gt;&#xA;  &#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Pour information&lt;/summary&gt;&#xA;  &lt;p&gt;Ne pratiquez pas cette bidouille chez vous si vous n&amp;rsquo;avez pas quelques bases en informatique. Mais en même temps, c&amp;rsquo;est un bon moyen d&amp;rsquo;apprendre par la pratique&amp;hellip;&lt;/p&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;On souhaite doter une unité de recherche SHS d&amp;rsquo;un serveur abordable, rapide et sécurisé&lt;/strong&gt;. Et ce pour plusieurs raisons : se &amp;ldquo;libérer&amp;rdquo; des contraintes et du coût du &lt;em&gt;cloud&lt;/em&gt; propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d&amp;rsquo;auto-hébergement doit également avoir un &amp;ldquo;potentiel pédagogique&amp;rdquo; pour les formations et UE d&amp;rsquo;humaninés-numériques. C&amp;rsquo;est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Collection HAL et template HTML-CSS</title>
       <link>https://maximilienpetitbidouilles.github.io/MP/blog/administrer-collection-hal/</link>
