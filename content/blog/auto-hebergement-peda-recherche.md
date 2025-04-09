@@ -70,6 +70,12 @@ Pour installer Yunohost sur Raspberry Pi 4, je recommande d'avoir **le logiciel 
 
 Ci-dessous, des captures d'écran de l'interface Yunohost. Vous pouvez ainsi réaliser que la solution offre des fonctionnalités pour faire des diagnostics de sécurité, des sauvegardes de vos installations, des mises à jour de votre système, une gestion de vos domaines et de vos utilisateurs. 
 
+<img src="/MP/images/yuno_1.PNG" alt="YunoHost 1" style="width:100%; height:auto;">
+
+<img src="/MP/images/yuno_2.PNG" alt="YunoHost 2" style="width:100%; height:auto;">
+
+<img src="/MP/images/yuno_3.PNG" alt="YunoHost 3" style="width:100%; height:auto;">
+
 ## En bonus : les usages
 
 Depuis que je pratique l'auto-hébergement (3 ans), je n'ai eu aucun problème de sécurité, aucun problème de plantage matériel et j'ai eu la possibilité de constater que les usages sont multiples pour la recherche et la pédagogie : 
