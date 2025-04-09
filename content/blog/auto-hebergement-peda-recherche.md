@@ -16,9 +16,9 @@ Ne pratiquez pas cette bidouille chez vous si vous n'avez pas quelques bases en 
 
 # Le problème
 
-**On souhaite doter une unité de recherche SHS d'un serveur abordable, rapide et sécurisé**. Et ce pour plusieurs raisons : se "libérer" des contraintes et du coût du *cloud* propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d'auto-hébergement doit également avoir un "potentiel pédagogique" pour les formations et UE d'humaninés-numériques. C'est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.
+**On souhaite doter une unité de recherche SHS d'un serveur abordable, rapide et sécurisé**. Et ce, pour plusieurs raisons : se "libérer" des contraintes et du coût du *cloud* propriétaire (Google Drive, Dropbox), pouvoir tester aisément des applications en ligne sans entraves. La solution d'auto-hébergement doit également avoir un "potentiel pédagogique" pour les formations et UE d'humanités-numériques. C'est un bon moyen de sensibiliser les étudiants, doctorants et enseignants-chercheurs sur la souveraineté des données.
 
-**Cet auto-hébergement doit pouvoir offrir également la possibilité d'héberger une instance Omeka S** afin de tester des bases de données et projets SHS. Cette instance est utilisée comme une *sandbox*/un bac à sables, le déploiement en ligne s'effectue ensuite par d'autres biais (principalement, les services d'Huma-Num).
+**Cet auto-hébergement doit pouvoir offrir également la possibilité d'héberger une instance Omeka S** afin de tester des bases de données et projets SHS. Cette instance est utilisée comme une *sandbox*/un bac à sable, le déploiement en ligne s'effectue ensuite par d'autres biais (principalement, les services d'Huma-Num).
 
 ## Qui peut aider ? 
 
@@ -66,7 +66,7 @@ Pour installer Yunohost sur Raspberry Pi 4, je recommande d'avoir **le logiciel 
 
 - Je recommande d'installer un client mail en passant par le catalogue des applications car Yunohost vous permettra de recevoir des alertes par mail pour gérer votre serveur. L'application *Roundcube* est par exemple intéressante.
 
-**Ensuite, c'est à vous de jouer ! Et d'apprendre à gérer votre serveur. C'est-à-dire, de réaliser régulièrement des diagnostics, de mettre à jour des applications, d'effectuer des sauvegardes. Progressez à tâtons, ne déployez les services que temporairement, ne sauvegardez pas  des données critiques et essentielles sans avoir d'autres solutions de sauvegarde (la règle des 3-2-1).**
+**Ensuite, c'est à vous de jouer ! Et d'apprendre à gérer votre serveur. C'est-à-dire, de réaliser régulièrement des diagnostics, de mettre à jour des applications, d'effectuer des sauvegardes. Progressez à tâtons, ne déployez les services que temporairement, ne sauvegardez pas  des données critiques et essentielles sans avoir d'autres solutions de sauvegarde (la règle 3-2-1).**
 
 Ci-dessous, des captures d'écran de l'interface Yunohost. Vous pouvez ainsi réaliser que la solution offre des fonctionnalités pour faire des diagnostics de sécurité, des sauvegardes de vos installations, des mises à jour de votre système, une gestion de vos domaines et de vos utilisateurs. 
 
