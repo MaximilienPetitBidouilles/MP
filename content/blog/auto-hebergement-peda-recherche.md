@@ -92,6 +92,7 @@ Au-delà de l'auto-hébergement, **l'intérêt également d'utiliser du matérie
 
 Par exemple, ci-dessous, la photo d'une "station d'écoute" permettant à des publics d'un colloque célébrant les 30 ans d'une unité de recherche d'écouter les créations sonores et podcasts du laboratoire. La station est basée sur un Raspberry Pi 4 Modèle B, un module de carte son, un écran tactile, et des logiciels libres (Raspberry Pi OS, Tenacity, VLC, Qmmp).
 
+<img src="/MP/images/station_ecoute_colloque.png" alt="Station d'écoute" style="width:100%; height:auto;">
 
 ## Pour aller plus loin
 
