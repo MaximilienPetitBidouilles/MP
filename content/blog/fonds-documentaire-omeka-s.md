@@ -24,7 +24,7 @@ Les personnels de la filière bibliothèque et les personnels de la BAP F (docum
 
 ## La bidouille
 
-Le résultat est visible ici : https://bibliohisto.org/s/bibliohisto/page/welcome
+**Le résultat est visible ici : <a href="https://bibliohisto.org/s/bibliohisto/page/welcome" target="_blank">Bibliohisto</a>**
 
 **Bibliohisto, donc, est un catalogue de notices bibliographiques de littérature grise (mémoires, thèses, HDR, etc.) des collections de la bibliothèque du laboratoire**. Les sujets qui structurent les fonds : l'histoire de l'édition, du livre, de la lecture et des archives, l'histoire des médias (presse, radio, tv, cinéma, internet, image, propagande), les arts du spectacle (théâtre, musique, danse) et loisirs (photos, sport), le patrimoine et la ville (urbanisation, architecture), les relations culturelles internationales, les rapports sociaux de sexe dans le champ culturel. Les documents couvrent une période chronologique précise : fin XVIIIe siècle à nos jours. 
 
@@ -129,9 +129,9 @@ a.nav-header {
 
 **Dans l'instance Omeka S de notre catalogue, chaque page doit suivre le même modèle** : un titre de page, un "bloc HTML" pour indiquer la démarche, un "bloc Aperçu des ressources" pour mettre en valeur 12 notices du lot, un "bloc Frise chronologique" qui interroge les notices par date de publication.
 
-**Les 2994 notices sont regroupées, via Omeka S, dans 15 collections**. La plupart du temps, les alimentations de la base se font par le biais de l'import d'un fichier CSV structuré ou l'import de notices depuis Zotero ou la création de notices directement dans le *back-office" du logiciel.
+**Les 2994 notices sont regroupées, via Omeka S, dans 15 collections**. La plupart du temps, les alimentations de la base se font par le biais de l'import d'un fichier CSV structuré ou l'import de notices depuis Zotero ou la création de notices directement dans le *back-office* du logiciel.
 
-**Les métadonnées "Créateur" et "Contributeur" de chaque notice sont interrogeables (cliquables)**. On peut ainsi, par exemple, consulter toutes les notices d'un même auteur en cliquant dessus. Cette opération s'effectue grâce au module Metadata Browse.
+**Les métadonnées "Créateur" et "Contributeur" de chaque notice sont interrogeables (cliquables)**. On peut ainsi, par exemple, consulter toutes les notices d'un même auteur en cliquant dessus. Cette opération s'effectue grâce au module *Metadata Browse*.
 
 Une bidouille à venir détaillera comment ce simple catalogue de notices est également au centre d'une stratégie de sauvegarde des mémoires de M1 et M2 d'une formation.
 
@@ -143,7 +143,7 @@ Une bidouille à venir détaillera comment ce simple catalogue de notices est é
 * <a href="https://omeka.org/s/modules/AdvancedSearch/" target="_blank">Advanced Search</a>
 * <a href="https://omeka.org/s/modules/BlockPlus/" target="_blank">Block Plus</a>
 * <a href="https://omeka.org/s/modules/BlocksDisposition/" target="_blank">Blocks Disposition</a>
-* <a href="https://omeka.org/s/docs/user-manual/modules/collecting/" target="_blank">Collecting</a>
+* <a href="https://omeka.org/s/modules/Collecting/" target="_blank">Collecting</a>
 * <a href="https://omeka.org/s/modules/Common/" target="_blank">Common</a>
 * <a href="https://omeka.org/s/modules/CSVImport/" target="_blank">CSV Import</a>
 * <a href="https://omeka.org/s/modules/EasyAdmin/" target="_blank">Easy Admin</a>
