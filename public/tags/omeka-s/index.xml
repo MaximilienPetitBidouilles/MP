@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Omeka S on Maximilien Petit</title>
+    <link>https://maximilienpetitbidouilles.github.io/MP/tags/omeka-s/</link>
+    <description>Recent content in Omeka S on Maximilien Petit</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Apr 2025 10:29:41 +0200</lastBuildDate>
+    <atom:link href="https://maximilienpetitbidouilles.github.io/MP/tags/omeka-s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Valoriser un fonds documentaire de laboratoire avec Omeka S</title>
+      <link>https://maximilienpetitbidouilles.github.io/MP/blog/fonds-documentaire-omeka-s/</link>
+      <pubDate>Thu, 10 Apr 2025 10:29:41 +0200</pubDate>
+      <guid>https://maximilienpetitbidouilles.github.io/MP/blog/fonds-documentaire-omeka-s/</guid>
+      <description>&lt;div class=&#34;custom-toc&#34;&gt;&#xD;&#xA;    &lt;details open&gt;&#xD;&#xA;      &lt;summary style=&#34;cursor: pointer; font-weight: bold; margin-bottom: 10px;&#34;&gt;Table des matières&lt;/summary&gt;&#xD;&#xA;      &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#le-problème&#34;&gt;Le problème&lt;/a&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#qui-peut-aider-&#34;&gt;Qui peut aider ?&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#la-bidouille&#34;&gt;La bidouille&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xD;&#xA;    &lt;/details&gt;&#xD;&#xA;  &lt;/div&gt;&#xA;&lt;h1 id=&#34;le-problème&#34;&gt;Le problème&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Certains laboratoires (de moins en moins&amp;hellip;) disposent de bibliothèques qui sont le plus souvent &amp;ldquo;exotiques&amp;rdquo; en termes de documentation&lt;/strong&gt;. Ces fonds possèdent parfois plusieurs &amp;ldquo;strates&amp;rdquo; d&amp;rsquo;indexation et de catalogage car, de fait, ces unités de recherche n&amp;rsquo;ont pas de personnel pour s&amp;rsquo;en charger, ou du personnel qui ne dispose pas d&amp;rsquo;une formation en documentation, ou du personnel qui n&amp;rsquo;a tout simplmenent pas le temps de s&amp;rsquo;en préoccuper. Il y a même des laboratoires où ce sont les enseignants-chercheurs et les doctorants qui font évoluer les fonds, et qui s&amp;rsquo;en occupent au quotidien. &lt;strong&gt;Donc vous avez des bibliothèques qui sont très particulières car, évidemment, tout est à faire&lt;/strong&gt; : beaucoup de documents ne sont pas dans le Sudoc, il n&amp;rsquo;y a jamais eu véritablement un &amp;ldquo;désherbage&amp;rdquo; et il est donc difficile d&amp;rsquo;en assurer une valorisation. Les services communs de la documentation associent, ou non, ces bibliothèques (par convention). Et, quoi qu&amp;rsquo;il en soit, &lt;strong&gt;le soutien de la filière bibliothèque est toujours précieux&lt;/strong&gt; pour les unités (par le catalogue central, par l&amp;rsquo;aide apportée sur la création de notices, par l&amp;rsquo;appui professionnel).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Valoriser un fonds documentaire de laboratoire avec Omeka S :: Maximilien Petit</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table des matièresLe problème Qui peut aider ? La bidouille Pour aller plus loin Le problème Certains laboratoires (de moins en moins&hellip;) disposent de bibliothèques qui sont le plus souvent &ldquo;exotiques&rdquo; en termes de documentation. Ces fonds possèdent parfois plusieurs &ldquo;strates&rdquo; d&rsquo;indexation et de catalogage car, de fait, ces unités de recherche n&rsquo;ont pas de personnel pour s&rsquo;en charger, ou du personnel qui ne dispose pas d&rsquo;une formation en documentation, ou du personnel qui n&rsquo;a tout simplmenent pas le temps de s&rsquo;en préoccuper. Il y a même des laboratoires où ce sont les enseignants-chercheurs et les doctorants qui font évoluer les fonds, et qui s&rsquo;en occupent au quotidien. Donc vous avez des bibliothèques qui sont très particulières car, évidemment, tout est à faire : beaucoup de documents ne sont pas dans le Sudoc, il n&rsquo;y a jamais eu véritablement un &ldquo;désherbage&rdquo; et il est donc difficile d&rsquo;en assurer une valorisation. Les services communs de la documentation associent, ou non, ces bibliothèques (par convention). Et, quoi qu&rsquo;il en soit, le soutien de la filière bibliothèque est toujours précieux pour les unités (par le catalogue central, par l&rsquo;aide apportée sur la création de notices, par l&rsquo;appui professionnel).
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://maximilienpetitbidouilles.github.io/MP/blog/fonds-documentaire-omeka-s/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/home.min.6f0be37eff14a939121fb1847bffc9d825bc44200ed6ff6ce9d378eff96c203e.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://maximilienpetitbidouilles.github.io/MP/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://maximilienpetitbidouilles.github.io/MP/favicon.png">
+<link rel="apple-touch-icon" href="https://maximilienpetitbidouilles.github.io/MP/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Valoriser un fonds documentaire de laboratoire avec Omeka S">
+<meta property="og:description" content="Table des matièresLe problème Qui peut aider ? La bidouille Pour aller plus loin Le problème Certains laboratoires (de moins en moins&hellip;) disposent de bibliothèques qui sont le plus souvent &ldquo;exotiques&rdquo; en termes de documentation. Ces fonds possèdent parfois plusieurs &ldquo;strates&rdquo; d&rsquo;indexation et de catalogage car, de fait, ces unités de recherche n&rsquo;ont pas de personnel pour s&rsquo;en charger, ou du personnel qui ne dispose pas d&rsquo;une formation en documentation, ou du personnel qui n&rsquo;a tout simplmenent pas le temps de s&rsquo;en préoccuper. Il y a même des laboratoires où ce sont les enseignants-chercheurs et les doctorants qui font évoluer les fonds, et qui s&rsquo;en occupent au quotidien. Donc vous avez des bibliothèques qui sont très particulières car, évidemment, tout est à faire : beaucoup de documents ne sont pas dans le Sudoc, il n&rsquo;y a jamais eu véritablement un &ldquo;désherbage&rdquo; et il est donc difficile d&rsquo;en assurer une valorisation. Les services communs de la documentation associent, ou non, ces bibliothèques (par convention). Et, quoi qu&rsquo;il en soit, le soutien de la filière bibliothèque est toujours précieux pour les unités (par le catalogue central, par l&rsquo;aide apportée sur la création de notices, par l&rsquo;appui professionnel).
+" />
+<meta property="og:url" content="https://maximilienpetitbidouilles.github.io/MP/blog/fonds-documentaire-omeka-s/" />
+<meta property="og:site_name" content="Maximilien Petit" />
+
+  <meta property="og:image" content="https://maximilienpetitbidouilles.github.io/MP/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-04-10 10:29:41 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://maximilienpetitbidouilles.github.io/MP/">
+  <div class="logo">
+    Maximilien Petit
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/MP/">Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog">Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv">Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about">À propos</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/MP/" >Accueil</a></li>
+        
+      
+        
+          <li><a href="/MP/blog" >Bidouilles</a></li>
+        
+      
+        
+          <li><a href="/MP/tags" >Tags</a></li>
+        
+      
+        
+          <li><a href="/MP/cv" >Cv</a></li>
+        
+      
+        
+          <li><a href="/MP/about" >À propos</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://maximilienpetitbidouilles.github.io/MP/blog/fonds-documentaire-omeka-s/">Valoriser un fonds documentaire de laboratoire avec Omeka S</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-04-10</time><span class="post-author">Maximilien Petit</span><span class="post-reading-time">7 minutes de lecture (1417 mots)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://maximilienpetitbidouilles.github.io/MP/tags/omeka-s/">Omeka S</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <div class="custom-toc">
+    <details open>
+      <summary style="cursor: pointer; font-weight: bold; margin-bottom: 10px;">Table des matières</summary>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#le-problème">Le problème</a>
+      <ul>
+        <li><a href="#qui-peut-aider-">Qui peut aider ?</a></li>
+        <li><a href="#la-bidouille">La bidouille</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+  </div>
+<h1 id="le-problème">Le problème<a href="#le-problème" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p><strong>Certains laboratoires (de moins en moins&hellip;) disposent de bibliothèques qui sont le plus souvent &ldquo;exotiques&rdquo; en termes de documentation</strong>. Ces fonds possèdent parfois plusieurs &ldquo;strates&rdquo; d&rsquo;indexation et de catalogage car, de fait, ces unités de recherche n&rsquo;ont pas de personnel pour s&rsquo;en charger, ou du personnel qui ne dispose pas d&rsquo;une formation en documentation, ou du personnel qui n&rsquo;a tout simplmenent pas le temps de s&rsquo;en préoccuper. Il y a même des laboratoires où ce sont les enseignants-chercheurs et les doctorants qui font évoluer les fonds, et qui s&rsquo;en occupent au quotidien. <strong>Donc vous avez des bibliothèques qui sont très particulières car, évidemment, tout est à faire</strong> : beaucoup de documents ne sont pas dans le Sudoc, il n&rsquo;y a jamais eu véritablement un &ldquo;désherbage&rdquo; et il est donc difficile d&rsquo;en assurer une valorisation. Les services communs de la documentation associent, ou non, ces bibliothèques (par convention). Et, quoi qu&rsquo;il en soit, <strong>le soutien de la filière bibliothèque est toujours précieux</strong> pour les unités (par le catalogue central, par l&rsquo;aide apportée sur la création de notices, par l&rsquo;appui professionnel).</p>
+<p><strong>Même avec ces problèmes, il importe selon moi de garder ces fonds, notamment car il y a très souvent des documents, et une littérature grise, que l&rsquo;on trouve difficilement ailleurs (ou nulle part)</strong>. D&rsquo;autant plus que ces fonds sont parfois le reflet et l&rsquo;histoire d&rsquo;une unité de recherche et cela me semble pertinent d&rsquo;avoir une stratégie de valorisation. À la fois pour les publics, pour l&rsquo;unité (ses enseignants-chercheurs, les disciplines et les méthodologies).</p>
+<p><strong>En réalité, même quand un fonds de laboratoire est identifié sur le SUDOC, il est presque invisible pour les usagers</strong>. Les SIGB (Système de gestion de bibliothèque) modernes dans les universités agrègent des dizaines de bibliothèques et &ldquo;moissonnent&rdquo; des bases de données documentaires. Une notice se retrouve perdue dans &ldquo;une masse&rdquo; et <strong>il y a une tendance professionnelle à vouloir &ldquo;simplifier&rdquo; à outrance les interfaces de recherche</strong>. Donc il est de plus en plus difficile, et même parfois impossible dans certaines universités, d&rsquo;aller précisément faire des recherche de documents ciblées par fonds de laboratoire/localisation.</p>
+<p><strong>Face à cela il me semble important, dans certains cas, de pouvoir doter les fonds de laboratoires de catalogues indépendants</strong>. Avec cette idée de ne pas doubler le travail de catalogage et de toujours privilégier quoi qu&rsquo;il arrive le &ldquo;circuit classique&rdquo; SUDOC/catalogue bibliothèque centrale.</p>
+<h2 id="qui-peut-aider-">Qui peut aider ?<a href="#qui-peut-aider-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Les personnels de la filière bibliothèque et les personnels de la BAP F (documentation).</p>
+<h2 id="la-bidouille">La bidouille<a href="#la-bidouille" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Le résultat est visible ici : <a href="https://bibliohisto.org/s/bibliohisto/page/welcome">https://bibliohisto.org/s/bibliohisto/page/welcome</a></p>
+<p><strong>Bibliohisto, donc, est un catalogue de notices bibliographiques de littérature grise (mémoires, thèses, HDR, etc.) des collections de la bibliothèque du laboratoire</strong>. Les sujets qui structurent les fonds : l&rsquo;histoire de l&rsquo;édition, du livre, de la lecture et des archives, l&rsquo;histoire des médias (presse, radio, tv, cinéma, internet, image, propagande), les arts du spectacle (théâtre, musique, danse) et loisirs (photos, sport), le patrimoine et la ville (urbanisation, architecture), les relations culturelles internationales, les rapports sociaux de sexe dans le champ culturel. Les documents couvrent une période chronologique précise : fin XVIIIe siècle à nos jours.</p>
+<p>Comme indiqué plus haut, il s&rsquo;agit essentiellement d&rsquo;une bibliothèque constituée, durant plus de 30 ans, par des dons d&rsquo;enseignants-chercheurs, et quelques rares achats (moins de 2000 euros par an). <strong>Ce catalogue donne ainsi une visibilité à 2994 notices du fonds</strong>.</p>
+<p><strong>Ce catalogue se base sur Omeka S</strong>. C&rsquo;est l&rsquo;outil le plus pertinent car il est pensé pour la pratique des SHS et il sépare utilement la gestion documentaire des notices et l&rsquo;exposition/valorisation des contenus. J&rsquo;ajoute qu&rsquo;<strong>Omeka S n&rsquo;a pas de problème de pérennité</strong> : il dispose d&rsquo;une communauté internationale et il est utilisé par beaucoup d&rsquo;institutions culturelles et patrimoniales (archives, bibliothèques, musées).</p>
+<p><strong>Certaines &ldquo;bidouilles&rdquo; à venir seront centrées sur la formation des publics et Omeka S.</strong></p>
+<p>En attente d&rsquo;une reprise par Huma-Num, ce catalogue est hebergé par Reclaim Hosting. Une entreprise anglo-saxonne qui permet d&rsquo;installer et gérer très facilement une instance Omeka S et qui travaille avec de nombreuses universités et écoles à l&rsquo;internationale. J&rsquo;ajoute que le support de Reclaim Hosting est extrêmement efficace.</p>
+<p><strong>La gestion des thèmes sous Omeka S est relativement hasardeuse</strong>, c&rsquo;est le point faible de l&rsquo;outil. <strong>On fait donc le choix d&rsquo;utiliser le thème &ldquo;Foundation&rdquo;</strong> car il est flexible, embarque plusieurs feuilles de style et est <em>responsive</em> (il s&rsquo;adapte à tous les écrans, y compris les smartphones). On modifie toutefois le thème (et le <em>stylesheet</em> <em>Sea Foam</em> du thème) avec notre propre CSS et en utilisant le module CSSEditor. Le CSS ci-dessous :</p>
+
+
+
+<details class="collapsable-code" >
+    <summary title="Click to interact"><span class="collapsable-code__title">CSS Bibliohisto</span></summary>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">site-title</span> <span style="color:#f92672">img</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> :<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> :<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> :<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> :<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">focus</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#003C57</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">resource-list</span> .<span style="color:#a6e22e">resource</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">disabled</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">disabled</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">disabled</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span>.<span style="color:#a6e22e">disabled</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">][</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">][</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span>.<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">hover</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span>.<span style="color:#a6e22e">disabled</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">disabled</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">],</span> <span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span><span style="color:#f92672">],</span> .<span style="color:#a6e22e">site-page-pagination</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">^=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">*=</span><span style="color:#e6db74">&#34;numeric-&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">label</span>.<span style="color:#a6e22e">numeric-toggle-time</span>.<span style="color:#a6e22e">button</span><span style="color:#f92672">[</span><span style="color:#f92672">disabled</span><span style="color:#f92672">]</span>:<span style="color:#a6e22e">focus</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#003C57</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">top-bar</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">top-bar</span> <span style="color:#f92672">ul</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">a</span>:<span style="color:#a6e22e">link</span> { <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#051C24</span> }          <span style="color:#75715e">/* Liens non visités */</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">a</span>:<span style="color:#a6e22e">visited</span> { <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#051C24</span> }     <span style="color:#75715e">/* Liens visités */</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> { <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#007198</span> }  <span style="color:#75715e">/* Liens survolés */</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">a</span>:<span style="color:#a6e22e">active</span> { <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#007198</span> }         <span style="color:#75715e">/* Liens actifs */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">p</span>:<span style="color:#a6e22e">active</span> { <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#eee</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">span</span>.<span style="color:#a6e22e">title</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#051C24</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">a</span>.<span style="color:#a6e22e">nav-header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">menu</span> .<span style="color:#a6e22e">active</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">toc-block</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ul</span> .<span style="color:#a6e22e">active</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">toc-block</span> <span style="color:#f92672">ul</span> <span style="color:#f92672">ul</span> .<span style="color:#a6e22e">active</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#003C57</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#003C57</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#003C57</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">label</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">filter-label</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">filter-value</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.33333</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">.8</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">default</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#007198</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></details>
+
+<p><strong>Le catalogue est pensé pour être le plus simple possible en termes d&rsquo;utilisation</strong>. On installe et on configure plusieurs modules pour y arriver (les liens en fin de bidouille) : Advanced Search, Block Plus, Blocks Disposition, Collecting, Common, CSV Import, Easy Admin, EU Cookie Bar, Export, Generic module, Log, Mapping, Metadata Browse, Sharing, Shortcode, Timeline, Zotero Import.</p>
+<p><strong>Chaque notice doit être très simple en termes de métadonnées</strong> (Dublin Core) pour faciliter et accélérer le projet car il y a des imports de notices mais aussi des créations (en partant d&rsquo;un inventaire sur Zotero). Par exemple, pour une notice de mémoire, voici ce qui est envisagé : Titre du mémoire, Auteur du mémoire, Jury de soutenance, Département, Date de soutenance, Mention du mémoire, Niveau du mémoire, Notation.</p>
+<p><strong>Idem, il faut simplifier autant que possible la navigation</strong>. Le site contient 6 pages visibles. Chaque page doit être centrée sur un ensemble cohérent de notices : une page pour les notices en Histoire, une page pour les notices en Histoire des médias, une page pour les notices en Histoire du livre, une page pour les notices Architecture et Patrimoine, une page pour présenter le projet. On ajoute également une page &ldquo;Monographies&rdquo; pour les notices qui, par ailleurs, se trouvent déjà dans le catalogue de la BU centrale et qui sont les documents que le laboratoire achète ou intègre à ses collections après un don.</p>
+<p><strong>Dans l&rsquo;instance Omeka S de notre catalogue, chaque page doit suivre le même modèle</strong> : un titre de page, un &ldquo;bloc HTML&rdquo; pour indiquer la démarche, un &ldquo;bloc Aperçu des ressources&rdquo; pour mettre en valeur 12 notices du lot, un &ldquo;bloc Frise chronologique&rdquo; qui interroge les notices par date de publication.</p>
+<p><strong>Les 2994 notices sont regroupées, via Omeka S, dans 15 collections</strong>. La plupart du temps, les alimentations de la base se font par le biais de l&rsquo;import d&rsquo;un fichier CSV structuré ou l&rsquo;import de notices depuis Zotero ou la création de notices directement dans le *back-office&quot; du logiciel.</p>
+<p><strong>Les métadonnées &ldquo;Créateur&rdquo; et &ldquo;Contributeur&rdquo; de chaque notice sont interrogeables (cliquables)</strong>. On peut ainsi, par exemple, consulter toutes les notices d&rsquo;un même auteur en cliquant dessus. Cette opération s&rsquo;effectue grâce au module Metadata Browse.</p>
+<p>Une bidouille à venir détaillera comment ce simple catalogue de notices est également au centre d&rsquo;une stratégie de sauvegarde des mémoires de M1 et M2 d&rsquo;une formation.</p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin<a href="#pour-aller-plus-loin" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://omeka.org/s/" target="_blank">Omeka S</a></li>
+<li><a href="https://omeka.org/s/themes/foundation/" target="_blank">Thème Foundation</a></li>
+<li><a href="https://omeka.org/s/modules/CSSEditor/" target="_blank">CSSEditor</a></li>
+<li><a href="https://omeka.org/s/modules/AdvancedSearch/" target="_blank">Advanced Search</a></li>
+<li><a href="https://omeka.org/s/modules/BlockPlus/" target="_blank">Block Plus</a></li>
+<li><a href="https://omeka.org/s/modules/BlocksDisposition/" target="_blank">Blocks Disposition</a></li>
+<li><a href="https://omeka.org/s/docs/user-manual/modules/collecting/" target="_blank">Collecting</a></li>
+<li><a href="https://omeka.org/s/modules/Common/" target="_blank">Common</a></li>
+<li><a href="https://omeka.org/s/modules/CSVImport/" target="_blank">CSV Import</a></li>
+<li><a href="https://omeka.org/s/modules/EasyAdmin/" target="_blank">Easy Admin</a></li>
+<li><a href="https://omeka.org/s/modules/EUCookieBar/" target="_blank">EU Cookie Bar</a></li>
+<li><a href="https://omeka.org/s/modules/Export/" target="_blank">Export</a></li>
+<li><a href="https://github.com/Daniel-KM/Omeka-S-module-Generic" target="_blank">Generic module</a></li>
+<li><a href="https://omeka.org/s/modules/Log/" target="_blank">Log</a></li>
+<li><a href="https://omeka.org/s/modules/Mapping/" target="_blank">Mapping</a></li>
+<li><a href="https://omeka.org/s/modules/MetadataBrowse/" target="_blank">Metadata Browse</a></li>
+<li><a href="https://omeka.org/s/modules/Sharing/" target="_blank">Sharing</a></li>
+<li><a href="https://omeka.org/s/modules/Shortcode/" target="_blank">Shortcode</a></li>
+<li><a href="https://omeka.org/s/modules/Timeline/" target="_blank">Timeline</a></li>
+<li><a href="https://omeka.org/s/modules/ZoteroImport/" target="_blank">Zotero Import</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright">
+          <span>© 2025 Propulsé par <a href="https://gohugo.io">Hugo</a></span>
+      
+        <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Thème</a> réalisé par <a href="https://github.com/panr" target="_blank">panr</a></span>
+        </div>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/MP/bundle.min.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>
